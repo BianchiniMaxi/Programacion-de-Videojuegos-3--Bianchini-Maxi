@@ -1,14 +1,29 @@
 extends KinematicBody2D
 
-const speed = 160 # Pixels/second
+export (int) var run_speed = 200
+export (int) var jump_speed = -600
+export (int) var gravity = 1200
+
+var velocity = Vector2()
+var jumping = false
+
+func get_input():
+	velocity.x = 0
+	var right = Input.is_action_pressed('ui_right')
+	var left = Input.is_action_pressed('ui_left')
+	var jump = Input.is_action_just_pressed('ui_up')
+
+	if jump and is_on_floor():
+		jumping = true
+		velocity.y = jump_speed
+	if right:
+		velocity.x += run_speed
+	if left:
+		velocity.x -= run_speed
 
 func _physics_process(delta):
-	var motion = Vector2()
-	
-	if (Input.is_action_pressed("move_left")):
-		motion += Vector2(-1, 0)
-	if (Input.is_action_pressed("move_right")):
-		motion += Vector2(1, 0)
-	
-	motion = motion.normalized()*speed*delta
-	move_and_collide(motion)
+	get_input()
+	velocity.y += gravity * delta
+	if jumping and is_on_floor():
+			jumping = false
+	velocity = move_and_slide(velocity, Vector2(0, -1))
