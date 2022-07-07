@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Levels/spritesheet_ground.png" type="Texture" id=1]
-[ext_resource path="res://Player/Blue/alienBlue_front.png" type="Texture" id=2]
+[ext_resource path="res://Player/Blue/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
@@ -342,6 +342,9 @@ points = PoolVector2Array( 128, 73.5625, 0, 73.85, 0, 0, 128, 0 )
 } ]
 16/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 140, 139 )
+
 [node name="Game" type="Node2D"]
 position = Vector2( 512, 347 )
 
@@ -354,17 +357,28 @@ format = 1
 tile_data = PoolIntArray( 196600, 5, 0, 196602, 4, 0, 196604, 4, 0, 196606, 4, 0, 131072, 4, 0, 131074, 4, 0, 131076, 4, 0, 131078, 4, 0, 131080, 4, 0, 131082, 4, 0, 131084, 4, 0, 131086, 4, 0, 131088, 4, 0, 131090, 4, 0, 131092, 4, 0, 131094, 4, 0, 131096, 4, 0 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( -751, -8 )
+position = Vector2( -379, 62 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 409, 53 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
-polygon = PoolVector2Array( 460, 93, 441, 110, 442, 129, 378, 129, 377, 109, 357, 96, 357, 12, 380, -15, 406, -22, 435, -16, 460, 8 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+scale = Vector2( 0.3, 0.3 )
+shape = SubResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
-position = Vector2( 413, -47 )
+offset = Vector2( 0, -100 )
 current = true
+zoom = Vector2( 1.5, 1.5 )
 smoothing_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
