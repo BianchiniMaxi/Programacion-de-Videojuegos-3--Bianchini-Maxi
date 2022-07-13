@@ -3,6 +3,7 @@
 [ext_resource path="res://Levels/spritesheet_ground.png" type="Texture" id=1]
 [ext_resource path="res://Player/Blue/Player.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
+[ext_resource path="res://Player/Blue/Player 2.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 128, 73.0799, 0, 73.0799, 0, 0, 128, 0 )
@@ -366,8 +367,6 @@ points = PoolVector2Array( 128, 73.5625, 0, 73.85, 0, 0, 128, 0 )
 } ]
 17/z_index = 0
 
-[sub_resource type="ImageTexture" id=19]
-
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 140, 139 )
 
@@ -385,7 +384,7 @@ tile_data = PoolIntArray( -655342, 3, 0, -655340, 4, 0, -655338, 4, 0, -655331, 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( -379, 62 )
 script = ExtResource( 3 )
-newTexture = SubResource( 19 )
+newTexture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )

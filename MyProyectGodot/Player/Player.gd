@@ -3,7 +3,7 @@ extends KinematicBody2D
 export (int) var run_speed = 400
 export (int) var jump_speed = -600
 export (int) var gravity = 1300
-export (ImageTexture) var newTexture
+export (StreamTexture) var newTexture
 
 var velocity = Vector2()
 var jumping = false
