@@ -59,3 +59,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://Levels/Menu.tscn")
