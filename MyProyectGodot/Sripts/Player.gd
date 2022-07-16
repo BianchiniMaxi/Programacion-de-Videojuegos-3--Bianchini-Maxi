@@ -8,15 +8,22 @@ export (StreamTexture) var texture1
 export (StreamTexture) var texture2
 export (StreamTexture) var texture3
 
+var lives = 3
 var velocity = Vector2()
 
 var start = false
 var acelerate = false 
 
+func lives_controller():
+	lives -= 1
+	if lives == 0:
+		get_parent().player_die = true
+
 func player_position():
 	if position.y > 300:
 		position.y = -100
 		position.x = 200
+		lives_controller()
 
 func get_input():
 	velocity.x = 0
@@ -49,10 +56,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		start = true
 	
-	if start:
-		get_input()
-		player_position()
+	#if start:
+	get_input()
+	player_position()
 		
-		velocity.y += gravity * delta
-		velocity = move_and_slide(velocity, Vector2(0, -1))
+	velocity.y += gravity * delta
+	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
