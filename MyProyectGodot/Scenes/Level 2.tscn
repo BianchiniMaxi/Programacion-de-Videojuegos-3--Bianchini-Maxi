@@ -442,7 +442,7 @@ __meta__ = {
 }
 
 [node name="Coin" type="StaticBody2D" parent="."]
-position = Vector2( 824, -228 )
+position = Vector2( 222, -487 )
 
 [node name="Sprite" type="Sprite" parent="Coin"]
 texture = ExtResource( 3 )
