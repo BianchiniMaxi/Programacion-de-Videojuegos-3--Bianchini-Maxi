@@ -56,6 +56,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		start = true
 	
+	if(get_slide_collision(get_slide_count() - 1) != null):
+		var obj_colition = get_slide_collision(get_slide_count() - 1).collider
+		if(obj_colition.is_in_group("Pinches")):
+			position.x = 200
+			lives_controller()
+	
 	#if start:
 	get_input()
 	player_position()

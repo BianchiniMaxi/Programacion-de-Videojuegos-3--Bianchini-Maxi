@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Sripts/Level 1.gd" type="Script" id=1]
 [ext_resource path="res://Image/Player/Player.png" type="Texture" id=2]
@@ -402,6 +402,9 @@ extents = Vector2( 140, 139 )
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 56, 58 )
 
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 35.0037, 9.125 )
+
 [node name="Level 1" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -474,44 +477,172 @@ __meta__ = {
 
 [node name="Pinches" type="Node" parent="."]
 
-[node name="Pinches" type="Sprite" parent="Pinches"]
-position = Vector2( 1312, -70 )
-scale = Vector2( 2.71429, 2 )
-texture = ExtResource( 9 )
-
-[node name="Pinches2" type="Sprite" parent="Pinches"]
-position = Vector2( 1632, -70 )
-scale = Vector2( 2.72857, 2 )
-texture = ExtResource( 9 )
-
-[node name="Pinches3" type="Sprite" parent="Pinches"]
-position = Vector2( 4064, -70 )
-scale = Vector2( 2.71429, 2 )
-texture = ExtResource( 9 )
-
-[node name="Pinches4" type="Sprite" parent="Pinches"]
-position = Vector2( 4256, -70 )
-scale = Vector2( 2.71429, 2 )
-texture = ExtResource( 9 )
-
-[node name="Pinches5" type="Sprite" parent="Pinches"]
-position = Vector2( 4448, -70 )
-scale = Vector2( 2.71429, 2 )
-texture = ExtResource( 9 )
-
-[node name="Pinches6" type="Sprite" parent="Pinches"]
-position = Vector2( 4640, -70 )
-scale = Vector2( 2.71429, 2 )
-texture = ExtResource( 9 )
-
-[node name="Pinches7" type="Sprite" parent="Pinches"]
-position = Vector2( 4832, -70 )
-scale = Vector2( 2.71429, 2 )
-texture = ExtResource( 9 )
-
-[node name="Pinches8" type="Sprite" parent="Pinches"]
+[node name="Pinches8" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
 position = Vector2( 5024, -70 )
-scale = Vector2( 2.71429, 2 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches8"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches8"]
 texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches7" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4832, -70 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches7"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches7"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches6" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4640, -70 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches6"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches6"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches5" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4448, -70 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches5"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches5"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches4" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4256, -70 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches4"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches4"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches3" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4064, -70 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches3"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches3"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches2" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 1632, -70 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches2"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches2"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 1311, -70 )
+scale = Vector2( 2.714, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches"]
+position = Vector2( -4.57764e-05, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinches"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
