@@ -61,6 +61,8 @@ func _physics_process(delta):
 		if(obj_colition.is_in_group("Pinches")):
 			position.x = 200
 			lives_controller()
+		if(obj_colition.is_in_group("Coins")):
+			get_parent().coin = true
 	
 	#if start:
 	get_input()
