@@ -5,6 +5,8 @@ export (bool) var player_die
 export (String) var nextLevel
 export (PackedScene) var Life
 
+var list_lives = []
+var offset_lifes = 80
 var lives = 3
 var points = 0
 
@@ -32,7 +34,13 @@ func _on_Area2D_body_entered(_body):
 	
 
 func create_life():
-	for i in lives:
+	for i in 3:
 		var newLife = Life.instance()
 		get_tree().get_nodes_in_group("Gui")[0].add_child(newLife)
+		newLife.global_position.x += offset_lifes * i
+		list_lives.append(newLife)
+		
+func delete_life():
+	lives -= 1
+	list_lives[lives].queue_free()
 

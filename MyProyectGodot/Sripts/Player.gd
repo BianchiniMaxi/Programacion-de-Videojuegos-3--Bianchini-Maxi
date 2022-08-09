@@ -16,6 +16,7 @@ var acelerate = false
 
 func lives_controller():
 	lives -= 1
+	get_parent().delete_life()
 	if lives == 0:
 		get_parent().player_die = true
 
@@ -62,7 +63,9 @@ func _physics_process(delta):
 			position.x = 200
 			lives_controller()
 		if(obj_colition.is_in_group("Coins")):
+			#obj_colition()
 			get_parent().coin = true
+			
 	
 	#if start:
 	get_input()
