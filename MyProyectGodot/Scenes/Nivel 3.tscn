@@ -1,14 +1,17 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Image/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Image/Icons/Moneda.png" type="Texture" id=3]
 [ext_resource path="res://Image/Icons/Bandera.png" type="Texture" id=4]
-[ext_resource path="res://Sripts/Player.gd" type="Script" id=5]
-[ext_resource path="res://Sripts/Level.gd" type="Script" id=6]
+[ext_resource path="res://Sripts/Jugador.gd" type="Script" id=5]
+[ext_resource path="res://Sripts/Niveles.gd" type="Script" id=6]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=7]
 [ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Life.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Corazones.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sripts/Monedas.gd" type="Script" id=10]
+[ext_resource path="res://Sripts/Pinches.gd" type="Script" id=11]
+[ext_resource path="res://Image/Icons/Pinches.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -396,46 +399,49 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 } ]
 15/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 140, 139 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 56, 58 )
 
-[node name="Level 3" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 35.0037, 9.125 )
+
+[node name="Nivel 3" type="Node2D"]
 script = ExtResource( 6 )
-nextLevel = "res://Scenes/Menu.tscn"
-Life = ExtResource( 9 )
+siguiente_nivel = "Menu"
+Corazones = ExtResource( 9 )
 
-[node name="Level" type="Node" parent="."]
+[node name="Mapa" type="Node" parent="."]
 
-[node name="TileMap" type="TileMap" parent="Level"]
+[node name="TileMap" type="TileMap" parent="Mapa"]
 tile_set = SubResource( 36 )
 format = 1
 tile_data = PoolIntArray( -393216, 2, 0, -393214, 14, 0, -262144, 1, 0, -131072, 1, 0, 0, 1, 0, 2, 2, 0, 4, 2, 0, 6, 2, 0, 8, 2, 0, 10, 2, 0, 12, 2, 0, 14, 2, 0, 16, 2, 0, 18, 2, 0, 20, 2, 0, 22, 2, 0 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
+[node name="Jugador" type="KinematicBody2D" parent="." groups=["Jugador"]]
 position = Vector2( 200, -100 )
 script = ExtResource( 5 )
-texture1 = ExtResource( 1 )
-texture2 = ExtResource( 7 )
-texture3 = ExtResource( 8 )
+textura1 = ExtResource( 1 )
+textura2 = ExtResource( 7 )
+textura3 = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="Player"]
+[node name="Sprite" type="Sprite" parent="Jugador"]
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
 scale = Vector2( 0.3, 0.3 )
-shape = SubResource( 17 )
+shape = SubResource( 37 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
 offset = Vector2( 0, -100 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
@@ -444,36 +450,65 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Coin" type="StaticBody2D" parent="."]
-position = Vector2( 824, -228 )
+[node name="Bandera Final" type="Area2D" parent="."]
+position = Vector2( 500, -63 )
 
-[node name="Sprite" type="Sprite" parent="Coin"]
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Coin"]
-polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 1459, -99 )
-
-[node name="Sprite" type="Sprite" parent="Area2D"]
+[node name="Sprite" type="Sprite" parent="Bandera Final"]
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 19 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bandera Final"]
+shape = SubResource( 38 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Node" parent="."]
+
+[node name="Pinche" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 1311, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche"]
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 39 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Monedas" type="Node" parent="."]
+
+[node name="Moneda" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 734, -151 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]

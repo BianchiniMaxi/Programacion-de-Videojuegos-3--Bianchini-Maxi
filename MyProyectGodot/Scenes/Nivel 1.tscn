@@ -1,68 +1,69 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://Sripts/Level.gd" type="Script" id=1]
-[ext_resource path="res://Image/Player/Player.png" type="Texture" id=2]
-[ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=3]
-[ext_resource path="res://Image/Icons/Moneda.png" type="Texture" id=4]
-[ext_resource path="res://Image/Icons/Bandera.png" type="Texture" id=5]
-[ext_resource path="res://Sripts/Player.gd" type="Script" id=6]
+[ext_resource path="res://Sripts/Pinches.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Corazones.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sripts/Jugador.gd" type="Script" id=3]
+[ext_resource path="res://Sripts/Niveles.gd" type="Script" id=4]
+[ext_resource path="res://Sripts/Monedas.gd" type="Script" id=5]
+[ext_resource path="res://Image/Icons/Moneda.png" type="Texture" id=6]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=7]
-[ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=8]
-[ext_resource path="res://Image/Icons/Pinches.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/Life.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Coin.gd" type="Script" id=11]
+[ext_resource path="res://Image/Player/Player.png" type="Texture" id=8]
+[ext_resource path="res://Image/Icons/Bandera.png" type="Texture" id=9]
+[ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=10]
+[ext_resource path="res://Image/Icons/Pinches.png" type="Texture" id=11]
+[ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=12]
 
-[sub_resource type="ConvexPolygonShape2D" id=20]
+[sub_resource type="ConvexPolygonShape2D" id=38]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=21]
+[sub_resource type="ConvexPolygonShape2D" id=39]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=22]
+[sub_resource type="ConvexPolygonShape2D" id=40]
 points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=23]
+[sub_resource type="ConvexPolygonShape2D" id=41]
 points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=24]
+[sub_resource type="ConvexPolygonShape2D" id=42]
 points = PoolVector2Array( 0, 0, 128, 0, 128, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=25]
+[sub_resource type="ConvexPolygonShape2D" id=43]
 points = PoolVector2Array( 0, 0, 128, 0, 128, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=26]
+[sub_resource type="ConvexPolygonShape2D" id=44]
 points = PoolVector2Array( 127.5, 48.1458, 117.5, 75.6458, 94.1667, 101.479, 50.8333, 118.979, 0, 128, 0, 0, 128, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=27]
+[sub_resource type="ConvexPolygonShape2D" id=45]
 points = PoolVector2Array( 0, 0, 0, 0, 128, 0, 128, 128, 79.1667, 119.312, 46.6667, 107.646, 19.1667, 87.6458, 1.66666, 55.1458 )
 
-[sub_resource type="ConvexPolygonShape2D" id=28]
+[sub_resource type="ConvexPolygonShape2D" id=46]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=29]
+[sub_resource type="ConvexPolygonShape2D" id=47]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=30]
+[sub_resource type="ConvexPolygonShape2D" id=48]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=31]
+[sub_resource type="ConvexPolygonShape2D" id=49]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=32]
+[sub_resource type="ConvexPolygonShape2D" id=50]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=33]
+[sub_resource type="ConvexPolygonShape2D" id=51]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=34]
+[sub_resource type="ConvexPolygonShape2D" id=52]
 points = PoolVector2Array( 128, 128, 0, 128, 128, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=35]
+[sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 
 [sub_resource type="TileSet" id=36]
 0/name = "SpriteSheet.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 128, 128 )
@@ -71,19 +72,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 20 )
+0/shape = SubResource( 38 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 20 ),
+"shape": SubResource( 38 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 1/name = "SpriteSheet.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 12 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 128, 0, 128, 128 )
@@ -92,19 +93,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 21 )
+1/shape = SubResource( 39 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 21 ),
+"shape": SubResource( 39 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
 2/name = "SpriteSheet.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 12 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 128, 128, 128 )
@@ -113,19 +114,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 28 )
+2/shape = SubResource( 46 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 28 ),
+"shape": SubResource( 46 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
 3/name = "SpriteSheet.png 3"
-3/texture = ExtResource( 3 )
+3/texture = ExtResource( 12 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 128, 128, 128, 128 )
@@ -134,19 +135,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 29 )
+3/shape = SubResource( 47 )
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 29 ),
+"shape": SubResource( 47 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
 4/name = "SpriteSheet.png 4"
-4/texture = ExtResource( 3 )
+4/texture = ExtResource( 12 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 256, 128, 128 )
@@ -155,19 +156,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 30 )
+4/shape = SubResource( 48 )
 4/shape_one_way = false
 4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 30 ),
+"shape": SubResource( 48 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
 5/name = "SpriteSheet.png 5"
-5/texture = ExtResource( 3 )
+5/texture = ExtResource( 12 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 1152, 128, 128 )
@@ -176,19 +177,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 31 )
+5/shape = SubResource( 49 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 31 ),
+"shape": SubResource( 49 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
 6/name = "SpriteSheet.png 6"
-6/texture = ExtResource( 3 )
+6/texture = ExtResource( 12 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 1280, 128, 128 )
@@ -197,19 +198,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 32 )
+6/shape = SubResource( 50 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 32 ),
+"shape": SubResource( 50 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
 7/name = "SpriteSheet.png 7"
-7/texture = ExtResource( 3 )
+7/texture = ExtResource( 12 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 1920, 128, 128 )
@@ -218,19 +219,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 33 )
+7/shape = SubResource( 51 )
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 33 ),
+"shape": SubResource( 51 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
 8/name = "SpriteSheet.png 8"
-8/texture = ExtResource( 3 )
+8/texture = ExtResource( 12 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 384, 128, 128 )
@@ -239,19 +240,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape = SubResource( 34 )
+8/shape = SubResource( 52 )
 8/shape_one_way = false
 8/shape_one_way_margin = 1.0
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 34 ),
+"shape": SubResource( 52 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 8/z_index = 0
 9/name = "SpriteSheet.png 9"
-9/texture = ExtResource( 3 )
+9/texture = ExtResource( 12 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 512, 128, 128 )
@@ -260,19 +261,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape = SubResource( 35 )
+9/shape = SubResource( 53 )
 9/shape_one_way = false
 9/shape_one_way_margin = 1.0
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 35 ),
+"shape": SubResource( 53 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 9/z_index = 0
 10/name = "SpriteSheet.png 10"
-10/texture = ExtResource( 3 )
+10/texture = ExtResource( 12 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 640, 128, 96 )
@@ -281,19 +282,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 10/navigation_offset = Vector2( 0, 0 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape = SubResource( 22 )
+10/shape = SubResource( 40 )
 10/shape_one_way = false
 10/shape_one_way_margin = 1.0
 10/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 22 ),
+"shape": SubResource( 40 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 10/z_index = 0
 11/name = "SpriteSheet.png 11"
-11/texture = ExtResource( 3 )
+11/texture = ExtResource( 12 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 768, 128, 96 )
@@ -302,19 +303,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-11/shape = SubResource( 23 )
+11/shape = SubResource( 41 )
 11/shape_one_way = false
 11/shape_one_way_margin = 1.0
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 23 ),
+"shape": SubResource( 41 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
 12/name = "SpriteSheet.png 12"
-12/texture = ExtResource( 3 )
+12/texture = ExtResource( 12 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 896, 128, 96 )
@@ -323,19 +324,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-12/shape = SubResource( 24 )
+12/shape = SubResource( 42 )
 12/shape_one_way = false
 12/shape_one_way_margin = 1.0
 12/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 24 ),
+"shape": SubResource( 42 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 12/z_index = 0
 13/name = "SpriteSheet.png 13"
-13/texture = ExtResource( 3 )
+13/texture = ExtResource( 12 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 0, 1024, 128, 96 )
@@ -344,19 +345,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 13/navigation_offset = Vector2( 0, 0 )
 13/shape_offset = Vector2( 0, 0 )
 13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-13/shape = SubResource( 25 )
+13/shape = SubResource( 43 )
 13/shape_one_way = false
 13/shape_one_way_margin = 1.0
 13/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 25 ),
+"shape": SubResource( 43 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 13/z_index = 0
 14/name = "SpriteSheet.png 14"
-14/texture = ExtResource( 3 )
+14/texture = ExtResource( 12 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 0, 1408, 128, 128 )
@@ -365,19 +366,19 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 14/navigation_offset = Vector2( 0, 0 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-14/shape = SubResource( 26 )
+14/shape = SubResource( 44 )
 14/shape_one_way = false
 14/shape_one_way_margin = 1.0
 14/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 26 ),
+"shape": SubResource( 44 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 14/z_index = 0
 15/name = "SpriteSheet.png 15"
-15/texture = ExtResource( 3 )
+15/texture = ExtResource( 12 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 0, 1536, 128, 128 )
@@ -386,14 +387,14 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 15/navigation_offset = Vector2( 0, 0 )
 15/shape_offset = Vector2( 0, 0 )
 15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-15/shape = SubResource( 27 )
+15/shape = SubResource( 45 )
 15/shape_one_way = false
 15/shape_one_way_margin = 1.0
 15/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 27 ),
+"shape": SubResource( 45 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 15/z_index = 0
@@ -407,40 +408,40 @@ extents = Vector2( 56, 58 )
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 35.0037, 9.125 )
 
-[node name="Level 1" type="Node2D"]
-script = ExtResource( 1 )
-nextLevel = "res://Scenes/Level 2.tscn"
-Life = ExtResource( 10 )
+[node name="Nivel 1" type="Node2D"]
+script = ExtResource( 4 )
+siguiente_nivel = "Nivel 2"
+Corazones = ExtResource( 2 )
 
-[node name="Level" type="Node" parent="."]
+[node name="Mapa" type="Node" parent="."]
 
-[node name="TileMap" type="TileMap" parent="Level"]
+[node name="TileMap" type="TileMap" parent="Mapa"]
 tile_set = SubResource( 36 )
 format = 1
 tile_data = PoolIntArray( -786368, 15, 0, -786366, 2, 0, -786364, 2, 0, -786362, 2, 0, -786360, 2, 0, -786358, 2, 0, -786356, 14, 0, -720836, 13, 0, -589768, 13, 0, -458754, 2, 0, -524288, 2, 0, -524286, 14, 0, -524261, 2, 0, -524183, 2, 0, -458703, 12, 0, -458701, 10, 0, -458651, 2, 0, -327682, 1, 0, -393216, 1, 0, -393189, 1, 0, -393111, 2, 0, -327584, 2, 0, -196610, 1, 0, -262144, 1, 0, -262122, 2, 0, -262117, 1, 0, -262108, 8, 0, -262106, 2, 0, -262104, 2, 0, -262102, 2, 0, -262100, 2, 0, -262098, 9, 0, -262079, 13, 0, -262069, 13, 0, -262039, 2, 0, -65538, 1, 0, -131072, 1, 0, -131055, 2, 0, -131050, 1, 0, -131045, 1, 0, -131038, 8, 0, -131036, 5, 0, -131034, 1, 0, -131032, 1, 0, -131030, 1, 0, -131028, 1, 0, -131026, 6, 0, -131024, 9, 0, -131012, 8, 0, -130992, 9, 0, -130981, 2, 0, -130967, 2, 0, 65534, 1, 0, 0, 1, 0, 2, 2, 0, 4, 2, 0, 6, 2, 0, 8, 2, 0, 10, 2, 0, 12, 2, 0, 14, 2, 0, 16, 2, 0, 18, 2, 0, 20, 2, 0, 22, 2, 0, 24, 2, 0, 26, 2, 0, 28, 2, 0, 30, 2, 0, 32, 2, 0, 34, 5, 0, 36, 1, 0, 38, 1, 0, 40, 1, 0, 42, 1, 0, 44, 1, 0, 46, 1, 0, 48, 6, 0, 50, 2, 0, 52, 2, 0, 54, 2, 0, 56, 2, 0, 58, 2, 0, 60, 5, 0, 62, 1, 0, 64, 1, 0, 66, 1, 0, 68, 1, 0, 70, 1, 0, 72, 1, 0, 74, 1, 0, 76, 1, 0, 78, 1, 0, 80, 6, 0, 82, 2, 0, 84, 2, 0, 86, 2, 0, 88, 2, 0, 90, 2, 0, 92, 2, 0, 94, 2, 0, 96, 2, 0, 98, 2, 0, 100, 2, 0, 102, 2, 0, 104, 2, 0, 106, 2, 0, 108, 2, 0, 110, 2, 0, 112, 2, 0, 114, 2, 0, 116, 2, 0, 118, 2, 0, 120, 2, 0, 196606, 1, 0, 131072, 1, 0, 131074, 1, 0, 131076, 1, 0, 131078, 1, 0, 131080, 1, 0, 131082, 1, 0, 131084, 1, 0, 131086, 1, 0, 131088, 1, 0, 131090, 1, 0, 131092, 1, 0, 131094, 1, 0, 131096, 1, 0, 131098, 1, 0, 131100, 1, 0, 131102, 1, 0, 131104, 1, 0, 131106, 1, 0, 131108, 1, 0, 131110, 1, 0, 131112, 1, 0, 131114, 1, 0, 131116, 1, 0, 131118, 1, 0, 131120, 1, 0, 131122, 1, 0, 131124, 1, 0, 131126, 1, 0, 131128, 1, 0, 131130, 1, 0, 131132, 1, 0, 131134, 1, 0, 131136, 1, 0, 131138, 1, 0, 131140, 1, 0, 131142, 1, 0, 131144, 1, 0, 131146, 1, 0, 131148, 1, 0, 131150, 1, 0, 131152, 1, 0, 131154, 1, 0, 131156, 1, 0, 131158, 1, 0, 131160, 1, 0, 131162, 1, 0, 131164, 1, 0, 131166, 1, 0, 131168, 1, 0, 131170, 1, 0, 131172, 1, 0, 131174, 1, 0, 131176, 1, 0, 131178, 1, 0, 131180, 1, 0, 131182, 1, 0, 131184, 1, 0, 131186, 1, 0, 131188, 1, 0, 131190, 1, 0, 131192, 1, 0, 327678, 1, 0, 262144, 1, 0, 262146, 1, 0, 262148, 1, 0, 262150, 1, 0, 262152, 1, 0, 262154, 1, 0, 262156, 1, 0, 262158, 1, 0, 262160, 1, 0, 262162, 1, 0, 262164, 1, 0, 262166, 1, 0, 262168, 1, 0, 262170, 1, 0, 262172, 1, 0, 262174, 1, 0, 262176, 1, 0, 262178, 1, 0, 262180, 1, 0, 262182, 1, 0, 262184, 1, 0, 262186, 1, 0, 262188, 1, 0, 262190, 1, 0, 262192, 1, 0, 262194, 1, 0, 262196, 1, 0, 262198, 1, 0, 262200, 1, 0, 262202, 1, 0, 262204, 1, 0, 262206, 1, 0, 262208, 1, 0, 262210, 1, 0, 262212, 1, 0, 262214, 1, 0, 262216, 1, 0, 262218, 1, 0, 262220, 1, 0, 262222, 1, 0, 262224, 1, 0, 262226, 1, 0, 262228, 1, 0, 262230, 1, 0, 262232, 1, 0, 262234, 1, 0, 262236, 1, 0, 262238, 1, 0, 262240, 1, 0, 262242, 1, 0, 262244, 1, 0, 262246, 1, 0, 262248, 1, 0, 262250, 1, 0, 262252, 1, 0, 262254, 1, 0, 262256, 1, 0, 262258, 1, 0, 262260, 1, 0, 262262, 1, 0, 262264, 1, 0 )
 
-[node name="Player" type="KinematicBody2D" parent="." groups=["Player"]]
+[node name="Jugador" type="KinematicBody2D" parent="." groups=["Jugador"]]
 position = Vector2( 200, -100 )
-script = ExtResource( 6 )
-texture1 = ExtResource( 2 )
-texture2 = ExtResource( 7 )
-texture3 = ExtResource( 8 )
+script = ExtResource( 3 )
+textura1 = ExtResource( 8 )
+textura2 = ExtResource( 7 )
+textura3 = ExtResource( 10 )
 
-[node name="Sprite" type="Sprite" parent="Player"]
+[node name="Sprite" type="Sprite" parent="Jugador"]
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
 scale = Vector2( 0.3, 0.3 )
 shape = SubResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
 offset = Vector2( 0, -100 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
@@ -449,32 +450,16 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Coin" type="StaticBody2D" parent="." groups=["Coins"]]
-position = Vector2( 1792, -584 )
-script = ExtResource( 11 )
+[node name="Bandera Final" type="Area2D" parent="."]
+position = Vector2( 500, -63 )
 
-[node name="Sprite" type="Sprite" parent="Coin"]
-texture = ExtResource( 4 )
+[node name="Sprite" type="Sprite" parent="Bandera Final"]
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Coin"]
-polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 7749, -63 )
-
-[node name="Sprite" type="Sprite" parent="Area2D"]
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bandera Final"]
 shape = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
@@ -482,192 +467,272 @@ __meta__ = {
 
 [node name="Pinches" type="Node" parent="."]
 
-[node name="Pinches8" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
-position = Vector2( 5024, -70 )
-scale = Vector2( 2.714, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches8"]
-position = Vector2( -4.57764e-05, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches8"]
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches7" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
-position = Vector2( 4832, -70 )
-scale = Vector2( 2.714, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches7"]
-position = Vector2( -4.57764e-05, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches7"]
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches6" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
-position = Vector2( 4640, -70 )
-scale = Vector2( 2.714, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches6"]
-position = Vector2( -4.57764e-05, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches6"]
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches5" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
-position = Vector2( 4448, -70 )
-scale = Vector2( 2.714, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches5"]
-position = Vector2( -4.57764e-05, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches5"]
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches4" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
-position = Vector2( 4256, -70 )
-scale = Vector2( 2.714, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches4"]
-position = Vector2( -4.57764e-05, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches4"]
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches3" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
-position = Vector2( 4064, -70 )
-scale = Vector2( 2.714, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches3"]
-position = Vector2( -4.57764e-05, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches3"]
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches2" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
-position = Vector2( 1632, -70 )
-scale = Vector2( 2.714, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches2"]
-position = Vector2( -4.57764e-05, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches2"]
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pinches" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+[node name="Pinche" type="Area2D" parent="Pinches" groups=["Pinches"]]
 position = Vector2( 1311, -70 )
 scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches"]
-position = Vector2( -4.57764e-05, 16.75 )
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche"]
+position = Vector2( 0, 16.75 )
 scale = Vector2( 1, 2 )
 shape = SubResource( 37 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches"]
-texture = ExtResource( 9 )
+[node name="Pinche2" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 1632, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Pinches9" type="StaticBody2D" parent="Pinches" groups=["Pinches"]]
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche2"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche2"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche3" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4064, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche3"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche3"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche4" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4256, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche4"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche4"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche5" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4448, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche5"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche5"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche6" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4640, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche6"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche6"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche7" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 4832, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche7"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche7"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche8" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 5024, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche8"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche8"]
+position = Vector2( 0, 16.75 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche9" type="Area2D" parent="Pinches" groups=["Pinches"]]
 position = Vector2( 6784, -564 )
 scale = Vector2( 1.8, 1.5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinches9"]
-position = Vector2( -4.57764e-05, 16.75 )
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche9"]
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche9"]
+position = Vector2( 0, 16.75 )
 scale = Vector2( 1, 2 )
 shape = SubResource( 37 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Pinches" type="Sprite" parent="Pinches/Pinches9"]
-texture = ExtResource( 9 )
+[node name="Monedas" type="Node" parent="."]
+
+[node name="Moneda" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 734, -151 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda"]
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Moneda2" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 4225, -366 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda2"]
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda2"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Moneda3" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 4851, -366 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda3"]
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda3"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche2" to="Pinches/Pinche2" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche3" to="Pinches/Pinche3" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche4" to="Pinches/Pinche4" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche5" to="Pinches/Pinche5" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche6" to="Pinches/Pinche6" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche7" to="Pinches/Pinche7" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche8" to="Pinches/Pinche8" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche9" to="Pinches/Pinche9" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda2" to="Monedas/Moneda2" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda3" to="Monedas/Moneda3" method="_on_Moneda_body_entered"]
