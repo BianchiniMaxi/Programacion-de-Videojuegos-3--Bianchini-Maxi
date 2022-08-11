@@ -14,6 +14,9 @@ func _ready():
 	
 
 func agarrar_moneda():
+	$Popup.popup(Rect2(0,0,500, 500))
+
+	#$Popup.about_to_show()
 	puntos += 15
 
 func _physics_process(delta):
@@ -30,6 +33,7 @@ func get_input():
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
 		get_tree().change_scene(siguiente_nivel)
+		#$Popup.popup(Rect2(500,0,500, 500))
 	
 
 func crear_vidas():

@@ -410,7 +410,7 @@ extents = Vector2( 35.0037, 9.125 )
 
 [node name="Nivel 3" type="Node2D"]
 script = ExtResource( 6 )
-siguiente_nivel = "Menu"
+siguiente_nivel = "Scenes/Menu.tscn"
 Corazones = ExtResource( 9 )
 
 [node name="Mapa" type="Node" parent="."]
@@ -451,7 +451,7 @@ __meta__ = {
 }
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 500, -63 )
+position = Vector2( 1086, -63 )
 
 [node name="Sprite" type="Sprite" parent="Bandera Final"]
 texture = ExtResource( 4 )

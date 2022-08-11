@@ -410,7 +410,7 @@ extents = Vector2( 35.0037, 9.125 )
 
 [node name="Nivel 1" type="Node2D"]
 script = ExtResource( 4 )
-siguiente_nivel = "Nivel 2"
+siguiente_nivel = "Scenes/Nivel 2.tscn"
 Corazones = ExtResource( 2 )
 
 [node name="Mapa" type="Node" parent="."]
@@ -451,7 +451,7 @@ __meta__ = {
 }
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 500, -63 )
+position = Vector2( 7751, -61 )
 
 [node name="Sprite" type="Sprite" parent="Bandera Final"]
 texture = ExtResource( 9 )
@@ -722,6 +722,21 @@ __meta__ = {
 }
 
 [node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
+
+[node name="Popup" type="Popup" parent="."]
+visible = true
+margin_left = -195.0
+margin_top = -54.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="WindowDialog" type="WindowDialog" parent="Popup"]
+visible = true
+modulate = Color( 0.509804, 0.0156863, 0.0156863, 1 )
+margin_left = 785.0
+margin_top = -191.0
+margin_right = 833.0
+margin_bottom = -151.0
 
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
