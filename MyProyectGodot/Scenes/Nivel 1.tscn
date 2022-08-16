@@ -411,6 +411,7 @@ extents = Vector2( 35.0037, 9.125 )
 [node name="Nivel 1" type="Node2D"]
 script = ExtResource( 4 )
 siguiente_nivel = "Scenes/Nivel 2.tscn"
+nivel_actual = "Scenes/Nivel 1.tscn"
 Corazones = ExtResource( 2 )
 
 [node name="Mapa" type="Node" parent="."]
@@ -451,7 +452,7 @@ __meta__ = {
 }
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 7751, -61 )
+position = Vector2( 500, -61 )
 
 [node name="Sprite" type="Sprite" parent="Bandera Final"]
 texture = ExtResource( 9 )
@@ -723,20 +724,37 @@ __meta__ = {
 
 [node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
 
-[node name="Popup" type="Popup" parent="."]
+[node name="PopupPanel" type="PopupPanel" parent="."]
 visible = true
-margin_left = -195.0
-margin_top = -54.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 310.0
+margin_top = -668.0
+margin_right = 1325.0
+margin_bottom = -76.0
+__meta__ = {
+"_editor_description_": ""
+}
 
-[node name="WindowDialog" type="WindowDialog" parent="Popup"]
-visible = true
-modulate = Color( 0.509804, 0.0156863, 0.0156863, 1 )
-margin_left = 785.0
-margin_top = -191.0
-margin_right = 833.0
-margin_bottom = -151.0
+[node name="Label" type="Label" parent="PopupPanel"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 1011.0
+margin_bottom = 588.0
+text = "¡FELICIDADES PUDISTE LLEGAR AL FINAL!
+
+AHORA PODES PASAR AL SIGUIENTE NIVEL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="BotonSiguiente" type="Button" parent="PopupPanel"]
+margin_left = 432.0
+margin_top = 413.0
+margin_right = 592.0
+margin_bottom = 444.0
+text = "SIGUIENTE"
 
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
@@ -751,3 +769,4 @@ margin_bottom = -151.0
 [connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda2" to="Monedas/Moneda2" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda3" to="Monedas/Moneda3" method="_on_Moneda_body_entered"]
+[connection signal="pressed" from="PopupPanel/BotonSiguiente" to="." method="_on_BotonSiguiente_pressed"]

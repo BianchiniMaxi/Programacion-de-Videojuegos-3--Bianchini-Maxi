@@ -1,6 +1,7 @@
 extends Node2D
 
 export (String) var siguiente_nivel
+export (String) var nivel_actual
 export (PackedScene) var Corazones
 
 var lista_vidas = []
@@ -14,9 +15,6 @@ func _ready():
 	
 
 func agarrar_moneda():
-	$Popup.popup(Rect2(0,0,500, 500))
-
-	#$Popup.about_to_show()
 	puntos += 15
 
 func _physics_process(delta):
@@ -32,9 +30,8 @@ func get_input():
 
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
-		get_tree().change_scene(siguiente_nivel)
-		#$Popup.popup(Rect2(500,0,500, 500))
-	
+		$PopupPanel.popup()
+		#get_tree().paused = true
 
 func crear_vidas():
 	for i in 3:
@@ -47,3 +44,10 @@ func crear_vidas():
 func perder_vidas():
 	vidas -= 1
 	lista_vidas[vidas].queue_free()
+
+
+func _on_BotonSiguiente_pressed():
+	get_tree().paused = false
+	get_tree().change_scene(siguiente_nivel)
+
+		
