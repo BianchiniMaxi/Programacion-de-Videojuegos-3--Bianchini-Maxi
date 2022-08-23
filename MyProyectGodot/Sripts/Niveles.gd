@@ -21,16 +21,22 @@ func _physics_process(delta):
 	get_input()
 	
 	if vidas == 0:
-		get_tree().change_scene("res://Scenes/Menu.tscn")
+		$PopupPanel.popup()
+		$PopupPanel.get_child(0).get_child(0).visible = true
+		$PopupPanel.get_child(0).get_child(1).visible = false
+		
 	
 
 func get_input():
 	if Input.is_action_just_pressed("ui_restart"):
 		get_tree().reload_current_scene()
 
+
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
 		$PopupPanel.popup()
+		$PopupPanel.get_child(0).get_child(0).visible = false
+		$PopupPanel.get_child(0).get_child(1).visible = true
 		#get_tree().paused = true
 
 func crear_vidas():
@@ -45,9 +51,23 @@ func perder_vidas():
 	vidas -= 1
 	lista_vidas[vidas].queue_free()
 
-
-func _on_BotonSiguiente_pressed():
+# Menu si GANA
+func _on_SiguienteButton_pressed():
 	get_tree().paused = false
 	get_tree().change_scene(siguiente_nivel)
 
-		
+# Menu si PIERDE
+func _on_RestartButton_pressed():
+	get_tree().change_scene(nivel_actual)
+
+
+func _on_MenuButton_pressed():
+	get_tree().change_scene("res://Scenes/Menu.tscn")
+
+
+func _on_QuitButton_pressed():
+	get_tree().quit()
+	
+
+
+
