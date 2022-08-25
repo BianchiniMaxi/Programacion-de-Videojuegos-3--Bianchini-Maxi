@@ -34,13 +34,9 @@ func get_input():
 
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
-<<<<<<< Updated upstream
 		$PopupPanel.popup()
 		$PopupPanel.get_child(0).get_child(0).visible = false
 		$PopupPanel.get_child(0).get_child(1).visible = true
-=======
-		$Menus/Control/PopupPanel.popup()
->>>>>>> Stashed changes
 		#get_tree().paused = true
 
 func crear_vidas():
