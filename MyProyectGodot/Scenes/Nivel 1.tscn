@@ -722,20 +722,31 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
+[node name="Menus" type="CanvasLayer" parent="."]
 
+[node name="Control" type="Control" parent="Menus"]
+margin_top = -500.0
+margin_right = 1000.0
+
+<<<<<<< Updated upstream
 [node name="PopupPanel" type="Popup" parent="."]
 visible = true
 margin_top = -500.0
 margin_right = 1000.0
 
 [node name="Panel" type="Panel" parent="PopupPanel"]
+=======
+[node name="PopupPanel" type="PopupPanel" parent="Menus/Control"]
+visible = true
+>>>>>>> Stashed changes
 margin_right = 1000.0
 margin_bottom = 500.0
 __meta__ = {
+"_edit_lock_": true,
 "_editor_description_": ""
 }
 
+<<<<<<< Updated upstream
 [node name="ContainerLose" type="VBoxContainer" parent="PopupPanel/Panel"]
 visible = false
 anchor_top = 0.5
@@ -753,6 +764,14 @@ margin_bottom = -136.0
 text = "LO SIENTO PERO HAS PERDIDO A PARTIDA"
 align = 1
 valign = 1
+=======
+[node name="Label" type="Label" parent="Menus/Control/PopupPanel"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 996.0
+margin_bottom = 496.0
+text = "¡FELICIDADES PUDISTE LLEGAR AL FINAL!
+>>>>>>> Stashed changes
 
 [node name="RestartButton" type="Button" parent="PopupPanel/Panel/ContainerLose"]
 margin_top = 18.0
@@ -791,11 +810,22 @@ text = "FELICIDADES HAS PODIDO SUPERAR EL NIVEL"
 align = 1
 valign = 1
 
+<<<<<<< Updated upstream
 [node name="SiguienteButton" type="Button" parent="PopupPanel/Panel/ContainerWin"]
 margin_top = 18.0
 margin_right = 291.0
 margin_bottom = 38.0
 text = "SIGUIENTE NIVEL"
+=======
+[node name="BotonSiguiente" type="Button" parent="Menus/Control/PopupPanel"]
+margin_left = 400.0
+margin_top = 350.0
+margin_right = 550.0
+margin_bottom = 380.0
+text = "SIGUIENTE"
+>>>>>>> Stashed changes
+
+[node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
 
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
@@ -810,7 +840,11 @@ text = "SIGUIENTE NIVEL"
 [connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda2" to="Monedas/Moneda2" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda3" to="Monedas/Moneda3" method="_on_Moneda_body_entered"]
+<<<<<<< Updated upstream
 [connection signal="pressed" from="PopupPanel/Panel/ContainerLose/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="PopupPanel/Panel/ContainerLose/MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="PopupPanel/Panel/ContainerLose/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="PopupPanel/Panel/ContainerWin/SiguienteButton" to="." method="_on_SiguienteButton_pressed"]
+=======
+[connection signal="pressed" from="Menus/Control/PopupPanel/BotonSiguiente" to="." method="_on_BotonSiguiente_pressed"]
+>>>>>>> Stashed changes

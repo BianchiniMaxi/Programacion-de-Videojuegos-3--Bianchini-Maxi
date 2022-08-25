@@ -510,6 +510,7 @@ __meta__ = {
 
 [node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
 
+<<<<<<< Updated upstream
 [node name="PopupPanel" type="Popup" parent="."]
 visible = true
 margin_right = 1000.0
@@ -561,6 +562,44 @@ margin_bottom = 58.0
 margin_right = 353.0
 margin_bottom = 20.0
 text = "SIGUIENTE NIVEL"
+=======
+[node name="Menus" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Menus"]
+margin_top = -500.0
+margin_right = 1000.0
+
+[node name="PopupPanel" type="PopupPanel" parent="Menus/Control"]
+visible = true
+margin_right = 1000.0
+margin_bottom = 500.0
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="Menus/Control/PopupPanel"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 996.0
+margin_bottom = 496.0
+text = "¡FELICIDADES PUDISTE LLEGAR AL FINAL!
+
+AHORA PODES PASAR AL SIGUIENTE NIVEL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="BotonSiguiente" type="Button" parent="Menus/Control/PopupPanel"]
+margin_left = 400.0
+margin_top = 350.0
+margin_right = 550.0
+margin_bottom = 380.0
+text = "SIGUIENTE"
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
