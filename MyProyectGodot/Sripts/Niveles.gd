@@ -21,10 +21,10 @@ func _physics_process(delta):
 	get_input()
 	
 	if vidas == 0:
-		$PopupPanel.popup()
-		$PopupPanel.get_child(0).get_child(0).visible = true
-		$PopupPanel.get_child(0).get_child(1).visible = false
-		
+		$GUI/PopupPanel.popup()
+		$GUI/PopupPanel.get_child(0).get_child(0).visible = true
+		$GUI/PopupPanel.get_child(0).get_child(1).visible = false
+		$Jugador.pararJugador()
 	
 
 func get_input():
@@ -34,9 +34,10 @@ func get_input():
 
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
-		$PopupPanel.popup()
-		$PopupPanel.get_child(0).get_child(0).visible = false
-		$PopupPanel.get_child(0).get_child(1).visible = true
+		$GUI/PopupPanel.popup()
+		$GUI/PopupPanel.get_child(0).get_child(0).visible = false
+		$GUI/PopupPanel.get_child(0).get_child(1).visible = true
+		$Jugador.pararJugador()
 		#get_tree().paused = true
 
 func crear_vidas():
@@ -53,7 +54,7 @@ func perder_vidas():
 
 # Menu si GANA
 func _on_SiguienteButton_pressed():
-	get_tree().paused = false
+	#get_tree().paused = false
 	get_tree().change_scene(siguiente_nivel)
 
 # Menu si PIERDE
@@ -67,7 +68,4 @@ func _on_MenuButton_pressed():
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
-	
-
-
 

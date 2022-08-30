@@ -60,3 +60,6 @@ func _physics_process(delta):
 	velocidad.y += gravedad * delta
 	velocidad = move_and_slide(velocidad, Vector2(0, -1))
 	
+
+func pararJugador():
+	velocidad_correr = 0
