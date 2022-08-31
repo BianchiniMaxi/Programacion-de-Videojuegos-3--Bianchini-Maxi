@@ -512,8 +512,6 @@ __meta__ = {
 
 [node name="PopupPanel" type="Popup" parent="GUI"]
 visible = true
-margin_top = -500.0
-margin_right = 1000.0
 
 [node name="Panel" type="Panel" parent="GUI/PopupPanel"]
 margin_right = 1000.0

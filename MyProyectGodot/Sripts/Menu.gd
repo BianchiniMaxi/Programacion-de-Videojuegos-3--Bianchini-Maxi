@@ -1,15 +1,18 @@
 extends Control
 
-func _on_StartButton_pressed():
+func _on_Boton_Comenzar_pressed():
 	get_tree().change_scene("res://Scenes/Nivel 1.tscn")
 
-func _on_Instructions_pressed():
-	$VBoxContainer.visible = false
-	$Label.visible = true
 
-func _on_MenuButton_pressed():
-	$VBoxContainer.visible = true
-	$Label.visible = false
+func _on_Boton_Instrucciones_pressed():
+	$Titulo.visible = false
+	$Instrucciones.visible = true
 
-func _on_QuitButton_pressed():
+
+func _on_Boton_Salir_pressed():
 	get_tree().quit()
+
+
+func _on_Boton_Menu_pressed():
+	$Titulo.visible = true
+	$Instrucciones.visible = false

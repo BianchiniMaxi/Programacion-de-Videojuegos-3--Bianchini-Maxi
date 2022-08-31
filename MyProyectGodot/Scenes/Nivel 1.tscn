@@ -726,69 +726,80 @@ __meta__ = {
 
 [node name="PopupPanel" type="Popup" parent="GUI"]
 visible = true
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
 
 [node name="Panel" type="Panel" parent="GUI/PopupPanel"]
-margin_right = 1000.0
-margin_bottom = 500.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 1024.0
+margin_bottom = 600.0
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="ContainerLose" type="VBoxContainer" parent="GUI/PopupPanel/Panel"]
-visible = false
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 318.0
-margin_top = -10.0
-margin_right = -329.0
-margin_bottom = 58.0
+margin_left = 362.0
+margin_top = 214.5
+margin_right = 604.0
+margin_bottom = 385.5
 
 [node name="Label" type="Label" parent="GUI/PopupPanel/Panel/ContainerLose"]
-margin_right = 353.0
-margin_bottom = 14.0
-text = "LO SIENTO PERO HAS PERDIDO A PARTIDA"
+margin_right = 242.0
+margin_bottom = 99.0
+text = "No has sido capaz de superar el nivel.
+
+Intentalo nuevamente!
+
+
+"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RestartButton" type="Button" parent="GUI/PopupPanel/Panel/ContainerLose"]
-margin_top = 18.0
-margin_right = 353.0
-margin_bottom = 38.0
+margin_top = 103.0
+margin_right = 242.0
+margin_bottom = 123.0
 text = "RESTART"
 
 [node name="MenuButton" type="Button" parent="GUI/PopupPanel/Panel/ContainerLose"]
-margin_top = 42.0
-margin_right = 353.0
-margin_bottom = 62.0
+margin_top = 127.0
+margin_right = 242.0
+margin_bottom = 147.0
 text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="QuitButton" type="Button" parent="GUI/PopupPanel/Panel/ContainerLose"]
-margin_top = 66.0
-margin_right = 353.0
-margin_bottom = 86.0
+margin_top = 151.0
+margin_right = 242.0
+margin_bottom = 171.0
 text = "QUIT"
 
 [node name="ContainerWin" type="VBoxContainer" parent="GUI/PopupPanel/Panel"]
+visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 322.0
-margin_top = -13.0
-margin_right = -387.0
-margin_bottom = 25.0
+margin_left = 391.0
+margin_top = -95.5
+margin_right = -391.0
+margin_bottom = 95.5
 
 [node name="Label" type="Label" parent="GUI/PopupPanel/Panel/ContainerWin"]
-margin_right = 291.0
-margin_bottom = 14.0
-text = "FELICIDADES HAS PODIDO SUPERAR EL NIVEL"
+margin_right = 242.0
+margin_bottom = 150.0
+text = "Felicidades!
+Fuiste capaz de superar el nivel.
+
+Pasa al proximo 
+nivel para tener mas retos.
+
+
+
+"
 align = 1
 valign = 1
 __meta__ = {
@@ -796,9 +807,9 @@ __meta__ = {
 }
 
 [node name="SiguienteButton" type="Button" parent="GUI/PopupPanel/Panel/ContainerWin"]
-margin_top = 18.0
-margin_right = 291.0
-margin_bottom = 38.0
+margin_top = 154.0
+margin_right = 242.0
+margin_bottom = 174.0
 text = "SIGUIENTE NIVEL"
 __meta__ = {
 "_edit_lock_": true
