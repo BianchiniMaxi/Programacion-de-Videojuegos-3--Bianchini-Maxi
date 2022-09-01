@@ -744,17 +744,18 @@ margin_top = 140.0
 margin_right = 855.5
 margin_bottom = 460.0
 custom_fonts/font = ExtResource( 14 )
-text = "FELICIDADES fuiste capaz de superar el nivel.
+text = "CONGRATULATIONS you were able to pass the level.
 
-Pasa al proximo nivel para tener mas retos."
+Go to the next level to have more challenges.
+"
 align = 1
 valign = 1
 
 [node name="Boton Siguiente" type="Button" parent="GUI/PopupPanel/Panel/TituloGanar"]
-margin_left = 244.5
+margin_left = 283.5
 margin_top = 247.0
-margin_right = 374.5
-margin_bottom = 267.0
+margin_right = 413.5
+margin_bottom = 275.0
 custom_fonts/font = ExtResource( 13 )
 text = "SIGUIENTE NIVEL"
 
@@ -812,7 +813,7 @@ text = "QUIT"
 [connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda2" to="Monedas/Moneda2" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda3" to="Monedas/Moneda3" method="_on_Moneda_body_entered"]
-[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloGanar/Boton Siguiente" to="." method="_on_SiguienteButton_pressed"]
-[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_RestartButton_pressed"]
-[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloPerder/Container/Boton Menu" to="." method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloPerder/Container/Boton Salir" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloGanar/Boton Siguiente" to="." method="_on_Boton_Siguiente_pressed"]
+[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
+[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
+[connection signal="pressed" from="GUI/PopupPanel/Panel/TituloPerder/Container/Boton Salir" to="." method="_on_Boton_Salir_pressed"]

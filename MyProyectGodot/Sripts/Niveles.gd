@@ -22,8 +22,8 @@ func _physics_process(delta):
 	
 	if vidas == 0:
 		$GUI/PopupPanel.popup()
-		$GUI/PopupPanel.get_child(0).get_child(0).visible = true
-		$GUI/PopupPanel.get_child(0).get_child(1).visible = false
+		$GUI/PopupPanel.get_child(0).get_child(0).visible = false
+		$GUI/PopupPanel.get_child(0).get_child(1).visible = true
 		$Jugador.pararJugador()
 	
 
@@ -35,8 +35,8 @@ func get_input():
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
 		$GUI/PopupPanel.popup()
-		$GUI/PopupPanel.get_child(0).get_child(0).visible = false
-		$GUI/PopupPanel.get_child(0).get_child(1).visible = true
+		$GUI/PopupPanel.get_child(0).get_child(0).visible = true
+		$GUI/PopupPanel.get_child(0).get_child(1).visible = false
 		$Jugador.pararJugador()
 		#get_tree().paused = true
 
@@ -53,19 +53,18 @@ func perder_vidas():
 	lista_vidas[vidas].queue_free()
 
 # Menu si GANA
-func _on_SiguienteButton_pressed():
-	#get_tree().paused = false
+func _on_Boton_Siguiente_pressed():
 	get_tree().change_scene(siguiente_nivel)
-
+	
+S
 # Menu si PIERDE
-func _on_RestartButton_pressed():
+func _on_Boton_Reiniciar_pressed():
 	get_tree().change_scene(nivel_actual)
 
 
-func _on_MenuButton_pressed():
+func _on_Boton_Menu_pressed():
 	get_tree().change_scene("res://Scenes/Menu.tscn")
 
 
-func _on_QuitButton_pressed():
+func _on_Boton_Salir_pressed():
 	get_tree().quit()
-
