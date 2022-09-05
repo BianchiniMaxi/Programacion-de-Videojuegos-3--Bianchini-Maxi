@@ -19,8 +19,8 @@ margin_top = 195.0
 margin_right = 638.5
 margin_bottom = 237.0
 custom_fonts/font = ExtResource( 3 )
-text = "GEOMETRYDASH 2.0"
-uppercase = true
+text = "GEOMETRYDASH 2.0
+ (patente pendiente)"
 
 [node name="Container" type="VBoxContainer" parent="Titulo"]
 margin_left = 61.5
