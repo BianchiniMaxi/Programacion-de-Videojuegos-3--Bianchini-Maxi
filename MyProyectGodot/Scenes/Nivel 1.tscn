@@ -769,7 +769,6 @@ __meta__ = {
 }
 
 [node name="TituloPerder" type="Label" parent="POP UPs/PopupPanel/Panel"]
-visible = false
 margin_left = 265.0
 margin_top = 214.5
 margin_right = 759.0

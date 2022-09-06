@@ -512,12 +512,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GUI" type="CanvasLayer" parent="." groups=["Gui"]]
+[node name="GUI Corazones" type="CanvasLayer" parent="." groups=["Gui_Corazones"]]
+
+[node name="GUI Monedas" type="CanvasLayer" parent="." groups=["Gui_Monedas"]]
 
 [node name="POP UPs" type="CanvasLayer" parent="."]
 
 [node name="PopupPanel" type="Popup" parent="POP UPs"]
-visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
 
@@ -567,7 +568,6 @@ __meta__ = {
 }
 
 [node name="TituloPerder" type="Label" parent="POP UPs/PopupPanel/Panel"]
-visible = false
 margin_left = 265.0
 margin_top = 214.5
 margin_right = 759.0
