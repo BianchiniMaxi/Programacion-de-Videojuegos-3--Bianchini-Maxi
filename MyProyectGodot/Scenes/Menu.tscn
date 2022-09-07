@@ -14,18 +14,17 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Titulo" type="Label" parent="."]
-margin_left = 385.5
+margin_left = 432.0
 margin_top = 195.0
-margin_right = 638.5
+margin_right = 592.0
 margin_bottom = 237.0
 custom_fonts/font = ExtResource( 3 )
-text = "GEOMETRYDASH 2.0
- (patente pendiente)"
+text = "RUN & JUMP"
 
 [node name="Container" type="VBoxContainer" parent="Titulo"]
-margin_left = 61.5
+margin_left = 15.0
 margin_top = 105.0
-margin_right = 191.5
+margin_right = 145.0
 margin_bottom = 197.0
 
 [node name="Boton Comenzar" type="Button" parent="Titulo/Container"]

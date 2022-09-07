@@ -519,6 +519,7 @@ __meta__ = {
 [node name="POP UPs" type="CanvasLayer" parent="."]
 
 [node name="PopupPanel" type="Popup" parent="POP UPs"]
+visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
 
@@ -531,6 +532,7 @@ __meta__ = {
 }
 
 [node name="TituloGanar" type="Label" parent="POP UPs/PopupPanel/Panel"]
+visible = false
 margin_left = 317.0
 margin_top = 140.0
 margin_right = 707.0
@@ -575,7 +577,8 @@ margin_top = 214.5
 margin_right = 759.0
 margin_bottom = 346.5
 custom_fonts/font = ExtResource( 13 )
-text = "You have not been able to pass the level.
+text = "GAME OVER
+You have not been able to pass the level.
 
 Try again!"
 align = 1
@@ -583,9 +586,9 @@ valign = 1
 
 [node name="Container" type="VBoxContainer" parent="POP UPs/PopupPanel/Panel/TituloPerder"]
 margin_left = 188.0
-margin_top = 171.5
+margin_top = 200.0
 margin_right = 318.0
-margin_bottom = 263.5
+margin_bottom = 292.0
 
 [node name="Boton Reiniciar" type="Button" parent="POP UPs/PopupPanel/Panel/TituloPerder/Container"]
 margin_right = 130.0
