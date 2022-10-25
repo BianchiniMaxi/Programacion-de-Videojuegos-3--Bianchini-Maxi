@@ -55,21 +55,20 @@ text = "QUIT"
 
 [node name="Instrucciones" type="Label" parent="."]
 visible = false
-margin_left = 41.5
-margin_right = 982.5
-margin_bottom = 537.0
+margin_left = 35.0
+margin_top = 17.0
+margin_right = 1002.0
+margin_bottom = 550.0
 custom_fonts/font = ExtResource( 3 )
-text = "The character advances alone at a constant speed, avoids obstacles by jumping.
+text = "
+
+The character advances alone at a constant speed, avoids obstacles by jumping.
 You jump with the \"Up Arrow\"
 We change characters with the numbers \"1\", \"2\" and \"3\"
 
 Character 1: can only perform a common jump.
 Character 2: perform a very high jump.
-Character 3: perform a common jump but can go faster
-using the \"Right Arrow\".
-
-Choose well which character is better in each situation, since the
-characters 2 and 3 can only appear 2 times."
+Character 3: perform a common jump but can go faster using the \"Right Arrow\"."
 
 [node name="Boton Menu" type="Button" parent="Instrucciones"]
 margin_left = 405.5

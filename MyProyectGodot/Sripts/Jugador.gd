@@ -20,6 +20,7 @@ func posicion_inicial():
 func get_input():
 	velocidad.x = 0
 	velocidad.x += velocidad_correr
+	log(get_parent().cambios)
 	
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
@@ -27,18 +28,21 @@ func get_input():
 	
 	if Input.is_action_pressed('ui_right') and acelerar:
 		velocidad.x += 200
-	if Input.is_action_pressed('ui_left'):
-		velocidad.x -= 200
+	#if Input.is_action_pressed('ui_left'):
+		#velocidad.x -= 200
 	
 	if Input.is_action_just_pressed("ui_number_1"):
+		get_parent().cambios += 1
 		$Sprite.texture = textura1
 		acelerar = false
 		fuerza_salto = -600
 	if Input.is_action_just_pressed("ui_number_2"):
+		get_parent().cambios += 1
 		$Sprite.texture = textura2
 		acelerar = false
 		fuerza_salto = -900
 	if Input.is_action_just_pressed("ui_number_3"):
+		get_parent().cambios += 1
 		$Sprite.texture = textura3
 		acelerar = true
 		fuerza_salto = -600
