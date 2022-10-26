@@ -670,57 +670,57 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Monedas_as" type="Node" parent="."]
+[node name="Monedas" type="Node" parent="."]
 
-[node name="Moneda" type="Area2D" parent="Monedas_as" groups=["Monedas"]]
+[node name="Moneda" type="Area2D" parent="Monedas" groups=["Monedas"]]
 position = Vector2( 734, -151 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Monedas_as/Moneda"]
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda"]
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas_as/Moneda"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda"]
 polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Moneda2" type="Area2D" parent="Monedas_as" groups=["Monedas"]]
+[node name="Moneda2" type="Area2D" parent="Monedas" groups=["Monedas"]]
 position = Vector2( 4225, -366 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Monedas_as/Moneda2"]
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda2"]
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas_as/Moneda2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda2"]
 polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Moneda3" type="Area2D" parent="Monedas_as" groups=["Monedas"]]
+[node name="Moneda3" type="Area2D" parent="Monedas" groups=["Monedas"]]
 position = Vector2( 4851, -366 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="Monedas_as/Moneda3"]
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda3"]
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas_as/Moneda3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda3"]
 polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
 __meta__ = {
 "_edit_lock_": true
@@ -736,16 +736,19 @@ __meta__ = {
 visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Panel" type="Panel" parent="POP UPs/PopupPanel"]
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
+"_edit_lock_": true,
 "_editor_description_": ""
 }
 
 [node name="TituloGanar" type="Label" parent="POP UPs/PopupPanel/Panel"]
-visible = false
 margin_left = 168.5
 margin_top = 140.0
 margin_right = 855.5
@@ -754,16 +757,21 @@ custom_fonts/font = ExtResource( 14 )
 text = "CONGRATULATIONS!
 You were able to pass the level.
 
+Level Score:                   
+
 Go to the next level.
 "
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Boton Siguiente" type="Button" parent="POP UPs/PopupPanel/Panel/TituloGanar"]
 margin_left = 283.5
-margin_top = 247.0
+margin_top = 300.0
 margin_right = 413.5
-margin_bottom = 275.0
+margin_bottom = 328.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 13 )
 text = "SIGUIENTE NIVEL"
@@ -772,6 +780,7 @@ __meta__ = {
 }
 
 [node name="TituloPerder" type="Label" parent="POP UPs/PopupPanel/Panel"]
+visible = false
 margin_left = 265.0
 margin_top = 214.5
 margin_right = 759.0
@@ -783,12 +792,18 @@ You have not been able to pass the level.
 Try again!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Container" type="VBoxContainer" parent="POP UPs/PopupPanel/Panel/TituloPerder"]
 margin_left = 188.0
 margin_top = 200.0
 margin_right = 318.0
 margin_bottom = 292.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Boton Reiniciar" type="Button" parent="POP UPs/PopupPanel/Panel/TituloPerder/Container"]
 margin_right = 130.0
@@ -833,9 +848,9 @@ __meta__ = {
 [connection signal="body_entered" from="Pinches/Pinche7" to="Pinches/Pinche7" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche8" to="Pinches/Pinche8" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche9" to="Pinches/Pinche9" method="_on_Pinche_body_entered"]
-[connection signal="body_entered" from="Monedas_as/Moneda" to="Monedas_as/Moneda" method="_on_Moneda_body_entered"]
-[connection signal="body_entered" from="Monedas_as/Moneda2" to="Monedas_as/Moneda2" method="_on_Moneda_body_entered"]
-[connection signal="body_entered" from="Monedas_as/Moneda3" to="Monedas_as/Moneda3" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda2" to="Monedas/Moneda2" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda3" to="Monedas/Moneda3" method="_on_Moneda_body_entered"]
 [connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloGanar/Boton Siguiente" to="." method="_on_Boton_Siguiente_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]

@@ -522,16 +522,19 @@ __meta__ = {
 visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Panel" type="Panel" parent="POP UPs/PopupPanel"]
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
+"_edit_lock_": true,
 "_editor_description_": ""
 }
 
 [node name="TituloGanar" type="Label" parent="POP UPs/PopupPanel/Panel"]
-visible = false
 margin_left = 168.5
 margin_top = 140.0
 margin_right = 855.5
@@ -540,16 +543,21 @@ custom_fonts/font = ExtResource( 13 )
 text = "CONGRATULATIONS!
 You were able to pass the level.
 
+Level Score:                   
+
 Go to the next level.
 "
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Boton Siguiente" type="Button" parent="POP UPs/PopupPanel/Panel/TituloGanar"]
 margin_left = 283.5
-margin_top = 247.0
+margin_top = 300.0
 margin_right = 413.5
-margin_bottom = 275.0
+margin_bottom = 328.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 14 )
 text = "SIGUIENTE NIVEL"
@@ -558,6 +566,7 @@ __meta__ = {
 }
 
 [node name="TituloPerder" type="Label" parent="POP UPs/PopupPanel/Panel"]
+visible = false
 margin_left = 265.0
 margin_top = 214.5
 margin_right = 759.0
@@ -569,12 +578,18 @@ You have not been able to pass the level.
 Try again!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Container" type="VBoxContainer" parent="POP UPs/PopupPanel/Panel/TituloPerder"]
 margin_left = 188.0
 margin_top = 200.0
 margin_right = 318.0
 margin_bottom = 292.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Boton Reiniciar" type="Button" parent="POP UPs/PopupPanel/Panel/TituloPerder/Container"]
 margin_right = 130.0

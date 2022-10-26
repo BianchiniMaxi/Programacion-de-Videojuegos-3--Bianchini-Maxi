@@ -4,7 +4,6 @@ export (String) var siguiente_nivel
 export (String) var nivel_actual
 export (PackedScene) var Corazones
 export (PackedScene) var Monedas
-export (int) var cambios
 
 var lista_vidas = []
 var diferencia_corazones = 80
@@ -13,6 +12,7 @@ var cantidad_monedas = 0
 var vidas = 3
 var puntos = 0
 var monedas = 0
+var cambios = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,6 +44,7 @@ func _on_Bandera_Final_body_entered(body):
 		$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = false
 		$Jugador.pararJugador()
 		puntos += 150 + ((30 * monedas) / cambios)
+		print (puntos)
 		#get_tree().paused = true
 
 func crear_monedas():
@@ -65,6 +66,9 @@ func crear_vidas():
 func perder_vidas():
 	vidas -= 1
 	lista_vidas[vidas].queue_free()
+	
+func modificar_numero_cambios():
+	cambios += 1;
 
 # Menu si GANA
 func _on_Boton_Siguiente_pressed():

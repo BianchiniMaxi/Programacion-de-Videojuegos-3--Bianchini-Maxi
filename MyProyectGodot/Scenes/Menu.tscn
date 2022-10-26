@@ -7,11 +7,17 @@
 
 [node name="Control" type="Control"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Fondo" type="Sprite" parent="."]
 scale = Vector2( 0.749634, 0.789474 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Titulo" type="Label" parent="."]
 margin_left = 432.0
@@ -20,12 +26,18 @@ margin_right = 592.0
 margin_bottom = 237.0
 custom_fonts/font = ExtResource( 3 )
 text = "RUN & JUMP"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Container" type="VBoxContainer" parent="Titulo"]
 margin_left = 15.0
 margin_top = 105.0
 margin_right = 145.0
 margin_bottom = 197.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Boton Comenzar" type="Button" parent="Titulo/Container"]
 margin_right = 130.0
@@ -33,6 +45,9 @@ margin_bottom = 28.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 4 )
 text = "START"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Boton Instrucciones" type="Button" parent="Titulo/Container"]
 margin_top = 32.0
@@ -42,6 +57,7 @@ focus_mode = 0
 custom_fonts/font = ExtResource( 4 )
 text = "INSTRUCTIONS"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": true
 }
 
@@ -52,6 +68,9 @@ margin_bottom = 92.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 4 )
 text = "QUIT"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Instrucciones" type="Label" parent="."]
 visible = false
@@ -69,6 +88,9 @@ We change characters with the numbers \"1\", \"2\" and \"3\"
 Character 1: can only perform a common jump.
 Character 2: perform a very high jump.
 Character 3: perform a common jump but can go faster using the \"Right Arrow\"."
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Boton Menu" type="Button" parent="Instrucciones"]
 margin_left = 405.5
@@ -78,6 +100,9 @@ margin_bottom = 558.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 4 )
 text = "MENU"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="pressed" from="Titulo/Container/Boton Comenzar" to="." method="_on_Boton_Comenzar_pressed"]
 [connection signal="pressed" from="Titulo/Container/Boton Instrucciones" to="." method="_on_Boton_Instrucciones_pressed"]

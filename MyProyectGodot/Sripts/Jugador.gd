@@ -11,6 +11,7 @@ export (StreamTexture) var textura3
 var velocidad = Vector2()
 var acelerar = false
 var muerto = false
+var personajeSkin = 1
 
 func posicion_inicial():
 	position.y = -100
@@ -20,7 +21,7 @@ func posicion_inicial():
 func get_input():
 	velocidad.x = 0
 	velocidad.x += velocidad_correr
-	log(get_parent().cambios)
+	print (get_parent().cambios)
 	
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
@@ -31,21 +32,24 @@ func get_input():
 	#if Input.is_action_pressed('ui_left'):
 		#velocidad.x -= 200
 	
-	if Input.is_action_just_pressed("ui_number_1"):
-		get_parent().cambios += 1
+	if Input.is_action_just_pressed("ui_number_1") && personajeSkin != 1:
+		get_parent().modificar_numero_cambios()
 		$Sprite.texture = textura1
 		acelerar = false
 		fuerza_salto = -600
-	if Input.is_action_just_pressed("ui_number_2"):
-		get_parent().cambios += 1
+		personajeSkin = 1
+	if Input.is_action_just_pressed("ui_number_2") && personajeSkin != 2:
+		get_parent().modificar_numero_cambios()
 		$Sprite.texture = textura2
 		acelerar = false
 		fuerza_salto = -900
-	if Input.is_action_just_pressed("ui_number_3"):
-		get_parent().cambios += 1
+		personajeSkin = 2
+	if Input.is_action_just_pressed("ui_number_3") && personajeSkin != 3:
+		get_parent().modificar_numero_cambios()
 		$Sprite.texture = textura3
 		acelerar = true
 		fuerza_salto = -600
+		personajeSkin = 3
 	
 func se_murio():
 	muerto = true
