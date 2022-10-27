@@ -23,19 +23,11 @@ func agarrar_moneda():
 	monedas += 1
 
 func _physics_process(delta):
-	get_input()
-	
 	if vidas == 0:
 		$"POP UPs"/PopupPanel.popup()
 		$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = false
 		$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = true
 		$Jugador.pararJugador()
-	
-
-func get_input():
-	if Input.is_action_just_pressed("ui_restart"):
-		get_tree().reload_current_scene()
-
 
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
