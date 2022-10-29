@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Image/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=2]
@@ -402,8 +402,11 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 } ]
 15/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 140, 139 )
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 126.667, 138.333 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 42, 39.5 )
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 56, 58 )
@@ -420,10 +423,10 @@ Monedas = ExtResource( 15 )
 
 [node name="Mapa" type="Node" parent="."]
 
-[node name="TileMap" type="TileMap" parent="Mapa"]
+[node name="TileMap" type="TileMap" parent="Mapa" groups=["Mapa"]]
 tile_set = SubResource( 36 )
 format = 1
-tile_data = PoolIntArray( -393216, 2, 0, -393214, 14, 0, -262144, 1, 0, -131072, 1, 0, 0, 1, 0, 2, 2, 0, 4, 2, 0, 6, 2, 0, 8, 2, 0, 10, 2, 0, 12, 2, 0, 14, 2, 0, 16, 2, 0, 18, 2, 0, 20, 2, 0, 22, 2, 0 )
+tile_data = PoolIntArray( -393216, 2, 0, -393214, 14, 0, -262144, 1, 0, -131072, 1, 0, -131064, 0, 0, 0, 1, 0, 2, 2, 0, 4, 2, 0, 6, 2, 0, 8, 2, 0, 10, 2, 0, 12, 2, 0, 14, 2, 0, 16, 2, 0, 18, 2, 0, 20, 2, 0, 22, 2, 0 )
 
 [node name="Jugador" type="KinematicBody2D" parent="." groups=["Jugador"]]
 position = Vector2( 200, -100 )
@@ -439,21 +442,25 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
+[node name="CollisionPies" type="CollisionShape2D" parent="Jugador"]
+position = Vector2( 0, 0.5 )
 scale = Vector2( 0.3, 0.3 )
-shape = SubResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
+shape = SubResource( 40 )
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
-offset = Vector2( 0, -100 )
+offset = Vector2( 150, -300 )
 current = true
-zoom = Vector2( 1.5, 1.5 )
+zoom = Vector2( 2, 2 )
 smoothing_enabled = true
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Collision Cuerpo" type="Area2D" parent="Jugador"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/Collision Cuerpo"]
+position = Vector2( 0, -2.5 )
+shape = SubResource( 41 )
 
 [node name="Bandera Final" type="Area2D" parent="."]
 position = Vector2( 1073, -63 )
@@ -624,6 +631,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[connection signal="body_entered" from="Jugador/Collision Cuerpo" to="Jugador" method="_on_Collision_Cuerpo_body_entered"]
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]

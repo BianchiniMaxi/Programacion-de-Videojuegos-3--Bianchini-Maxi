@@ -35,7 +35,7 @@ func _on_Bandera_Final_body_entered(body):
 		$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = true
 		$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = false
 		$Jugador.pararJugador()
-		puntos += 150 + ((30 * monedas) / cambios)
+		puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
 		print (puntos)
 		#get_tree().paused = true
 
@@ -57,7 +57,8 @@ func crear_vidas():
 
 func perder_vidas():
 	vidas -= 1
-	lista_vidas[vidas].queue_free()
+	if vidas >= 0:
+		lista_vidas[vidas].queue_free()
 	
 func modificar_numero_cambios():
 	cambios += 1;
