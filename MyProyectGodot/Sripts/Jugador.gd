@@ -27,6 +27,7 @@ func get_input():
 	
 	if Input.is_action_just_pressed("ui_jump"):
 		if is_on_floor():
+			gravedad = 1300
 			velocidad.y = fuerza_salto
 			salto = true
 	
@@ -60,11 +61,14 @@ func _physics_process(delta):
 	
 	get_input()
 	
+	if salto && velocidad.y >= 0:
+		gravedad = 2500
+		salto = false
+	
+	print (velocidad.y)
+	
 	if position.y > 300:
 		posicion_inicial()
-		
-	if salto && :
-		
 	
 	if muerto == true:
 		tiempo_puede_morir = 0

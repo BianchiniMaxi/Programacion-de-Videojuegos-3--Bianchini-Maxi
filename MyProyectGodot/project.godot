@@ -17,7 +17,6 @@ config/icon="res://icon.png"
 [display]
 
 window/size/resizable=false
-window/size/fullscreen=true
 window/stretch/mode="2d"
 
 [global]
@@ -25,6 +24,8 @@ window/stretch/mode="2d"
 input=false
 Full=false
 Screen=false
+Fullscren=false
+Fullscreen=false
 
 [input]
 
