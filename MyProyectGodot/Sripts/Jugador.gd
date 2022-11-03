@@ -12,6 +12,7 @@ var velocidad = Vector2()
 var muerto = false
 var personajeSkin = 1
 var tiempo_puede_morir = 0
+var salto = false
 
 func posicion_inicial():
 	muerto = false
@@ -27,6 +28,7 @@ func get_input():
 	if Input.is_action_just_pressed("ui_jump"):
 		if is_on_floor():
 			velocidad.y = fuerza_salto
+			salto = true
 	
 	if Input.is_action_just_pressed("ui_number_1") && personajeSkin != 1:
 		#get_parent().modificar_numero_cambios()
@@ -60,6 +62,9 @@ func _physics_process(delta):
 	
 	if position.y > 300:
 		posicion_inicial()
+		
+	if salto && :
+		
 	
 	if muerto == true:
 		tiempo_puede_morir = 0
