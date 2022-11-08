@@ -51,7 +51,7 @@ func get_input():
 		personajeSkin = 3
 
 func se_murio():
-	if  tiempo_puede_morir > 2:
+	if  tiempo_puede_morir > 1:
 		muerto = true
 	else:
 		 muerto = false
@@ -64,8 +64,6 @@ func _physics_process(delta):
 	if salto && velocidad.y >= 0:
 		gravedad = 2500
 		salto = false
-	
-	print (velocidad.y)
 	
 	if position.y > 300:
 		posicion_inicial()
