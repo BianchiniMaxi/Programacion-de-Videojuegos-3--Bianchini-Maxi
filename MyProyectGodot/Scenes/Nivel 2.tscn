@@ -429,7 +429,7 @@ __meta__ = {
 }
 
 [node name="Jugador" type="KinematicBody2D" parent="." groups=["Jugador"]]
-position = Vector2( 350, -100 )
+position = Vector2( 11000, -100 )
 script = ExtResource( 5 )
 textura1 = ExtResource( 1 )
 textura2 = ExtResource( 7 )
@@ -675,6 +675,57 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Pinche12" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 9250, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 11 )
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche12"]
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche12"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche13" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 9775, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 11 )
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche13"]
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche13"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pinche14" type="Area2D" parent="Pinches" groups=["Pinches"]]
+position = Vector2( 10300, -70 )
+scale = Vector2( 2.714, 2 )
+script = ExtResource( 11 )
+
+[node name="Pinches" type="Sprite" parent="Pinches/Pinche14"]
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche14"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Monedas" type="Node" parent="."]
 
 [node name="Moneda" type="Area2D" parent="Monedas" groups=["Monedas"]]
@@ -736,6 +787,70 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda4"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Moneda5" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 9221, -1018 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda5"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda5"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Moneda6" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 10306, -1018 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda6"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda6"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Moneda7" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 9759, -248 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda7"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda7"]
+polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Moneda8" type="Area2D" parent="Monedas" groups=["Monedas"]]
+position = Vector2( 12800, -509 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Monedas/Moneda8"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Monedas/Moneda8"]
 polygon = PoolVector2Array( -7, -15, -14, -10, -18, -2, -17, 8, -9, 17, 1, 19, 8, 17, 12, 14, 17, 6, 17, -4, 14, -10, 8, -15, 1, -16 )
 __meta__ = {
 "_edit_lock_": true
@@ -865,10 +980,17 @@ __meta__ = {
 [connection signal="body_entered" from="Pinches/Pinche9" to="Pinches/Pinche9" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche10" to="Pinches/Pinche10" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche11" to="Pinches/Pinche11" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche12" to="Pinches/Pinche12" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche13" to="Pinches/Pinche13" method="_on_Pinche_body_entered"]
+[connection signal="body_entered" from="Pinches/Pinche14" to="Pinches/Pinche14" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda2" to="Monedas/Moneda2" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda3" to="Monedas/Moneda3" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda4" to="Monedas/Moneda4" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda5" to="Monedas/Moneda5" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda6" to="Monedas/Moneda6" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda7" to="Monedas/Moneda7" method="_on_Moneda_body_entered"]
+[connection signal="body_entered" from="Monedas/Moneda8" to="Monedas/Moneda8" method="_on_Moneda_body_entered"]
 [connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloGanar/Boton Siguiente" to="." method="_on_Boton_Siguiente_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
