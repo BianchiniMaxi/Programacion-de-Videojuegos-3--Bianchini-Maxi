@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Sripts/Pinches.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Corazones.tscn" type="PackedScene" id=2]
@@ -411,9 +411,6 @@ extents = Vector2( 42, 39.5 )
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 56, 58 )
 
-[sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 35.0037, 9.125 )
-
 [node name="Nivel 1" type="Node2D"]
 script = ExtResource( 4 )
 siguiente_nivel = "Scenes/Nivel 2.tscn"
@@ -502,10 +499,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -521,10 +516,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche2"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche2"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -540,10 +533,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche3"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche3"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -559,10 +550,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche4"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche4"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -578,10 +567,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche5"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche5"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -597,10 +584,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche6"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche6"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -616,10 +601,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche7"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche7"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -635,10 +618,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche8"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche8"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -654,10 +635,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches/Pinche9"]
-position = Vector2( 0, 16.75 )
-scale = Vector2( 1, 2 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pinches/Pinche9"]
+polygon = PoolVector2Array( -35.0037, 35, -23.5814, 1, 23.5814, 1, 35.0037, 35 )
 __meta__ = {
 "_edit_lock_": true
 }
