@@ -472,7 +472,7 @@ __meta__ = {
 }
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 1000, -64 )
+position = Vector2( 14000, -63 )
 
 [node name="Sprite" type="Sprite" parent="Bandera Final"]
 texture = ExtResource( 4 )
@@ -863,6 +863,7 @@ __meta__ = {
 [node name="POP UPs" type="CanvasLayer" parent="."]
 
 [node name="PopupPanel" type="Popup" parent="POP UPs"]
+visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
