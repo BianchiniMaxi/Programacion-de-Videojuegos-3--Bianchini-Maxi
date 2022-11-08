@@ -473,6 +473,9 @@ __meta__ = {
 
 [node name="Bandera Final" type="Area2D" parent="."]
 position = Vector2( 14000, -63 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Bandera Final"]
 texture = ExtResource( 4 )
