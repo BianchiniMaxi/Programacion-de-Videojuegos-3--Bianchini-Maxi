@@ -82,12 +82,14 @@ custom_fonts/font = ExtResource( 3 )
 text = "
 
 The character advances alone at a constant speed, avoids obstacles by jumping.
-You jump with the \"Up Arrow\"
+You jump with the \"Space Arrow\"
 We change characters with the numbers \"1\", \"2\" and \"3\"
 
 Character 1: can only perform a common jump.
 Character 2: perform a very high jump.
-Character 3: perform a common jump but can go faster using the \"Right Arrow\"."
+Character 3: perform a common jump but  it is faster.
+
+Collect all the coins to add more points."
 __meta__ = {
 "_edit_lock_": true
 }
