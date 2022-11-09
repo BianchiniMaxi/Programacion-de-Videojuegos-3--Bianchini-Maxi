@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export (int) var gravedad = 1300
-export (int) var velocidad_correr = 400
-export (int) var fuerza_salto = -650
+export (int) var gravedad = 2000
+export (int) var velocidad_correr = 600
+export (int) var fuerza_salto = -850
 
 export (StreamTexture) var textura1
 export (StreamTexture) var textura2
@@ -27,28 +27,28 @@ func get_input():
 	
 	if Input.is_action_just_pressed("ui_jump"):
 		if is_on_floor():
-			gravedad = 1300
+			gravedad = 2000
 			velocidad.y = fuerza_salto
 			salto = true
 	
-	if Input.is_action_just_pressed("ui_number_1") && personajeSkin != 1:
+	if Input.is_action_just_pressed("ui_number_1"): #&& personajeSkin != 1:
 		#get_parent().modificar_numero_cambios()
 		$Sprite.texture = textura1
-		velocidad_correr = 400
-		fuerza_salto = -650
-		personajeSkin = 1
-	if Input.is_action_just_pressed("ui_number_2") && personajeSkin != 2:
+		velocidad_correr = 600
+		fuerza_salto = -850
+		#personajeSkin = 1
+	if Input.is_action_just_pressed("ui_number_2"): #&& personajeSkin != 2:
 		#get_parent().modificar_numero_cambios()
 		$Sprite.texture = textura2
-		velocidad_correr = 400
-		fuerza_salto = -1050
-		personajeSkin = 2
-	if Input.is_action_just_pressed("ui_number_3") && personajeSkin != 3:
+		velocidad_correr = 600
+		fuerza_salto = -1300
+		#personajeSkin = 2
+	if Input.is_action_just_pressed("ui_number_3"): #&& personajeSkin != 3:
 		#get_parent().modificar_numero_cambios()
 		$Sprite.texture = textura3
-		velocidad_correr = 600
-		fuerza_salto = -650
-		personajeSkin = 3
+		velocidad_correr = 800
+		fuerza_salto = -850
+		#personajeSkin = 3
 
 func se_murio():
 	if  tiempo_puede_morir > 1:
@@ -62,7 +62,7 @@ func _physics_process(delta):
 	get_input()
 	
 	if salto && velocidad.y >= 0:
-		gravedad = 2500
+		gravedad = 4000
 		salto = false
 	
 	if position.y > 300:
