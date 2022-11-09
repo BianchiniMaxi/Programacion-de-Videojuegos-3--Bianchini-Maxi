@@ -403,7 +403,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 15/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 126.667, 138.333 )
+extents = Vector2( 136.667, 140 )
 
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 42, 39.5 )
@@ -440,7 +440,6 @@ __meta__ = {
 }
 
 [node name="CollisionPies" type="CollisionShape2D" parent="Jugador"]
-position = Vector2( 0, 0.5 )
 scale = Vector2( 0.3, 0.3 )
 shape = SubResource( 40 )
 __meta__ = {
