@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var gravedad = 2000
+export (int) var gravedad = 2200
 export (int) var velocidad_correr = 600
 export (int) var fuerza_salto = -850
 
@@ -27,7 +27,7 @@ func get_input():
 	
 	if Input.is_action_just_pressed("ui_jump"):
 		if is_on_floor():
-			gravedad = 2000
+			gravedad = 2200
 			velocidad.y = fuerza_salto
 			salto = true
 	
@@ -41,7 +41,7 @@ func get_input():
 		#get_parent().modificar_numero_cambios()
 		$Sprite.texture = textura2
 		velocidad_correr = 600
-		fuerza_salto = -1300
+		fuerza_salto = -1400
 		#personajeSkin = 2
 	if Input.is_action_just_pressed("ui_number_3"): #&& personajeSkin != 3:
 		#get_parent().modificar_numero_cambios()
