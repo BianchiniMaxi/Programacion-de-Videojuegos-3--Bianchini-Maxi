@@ -2,6 +2,7 @@ extends Control
 
 func _on_Boton_Comenzar_pressed():
 	get_tree().change_scene("res://Scenes/Nivel 1.tscn")
+	Puntos.puntos = 0
 
 
 func _on_Boton_Instrucciones_pressed():

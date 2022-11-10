@@ -4,15 +4,13 @@ export (String) var siguiente_nivel
 export (String) var nivel_actual
 export (PackedScene) var Corazones
 export (PackedScene) var Monedas
+export (float) var vidas 
 
 var lista_vidas = []
 var diferencia_corazones = 80
 var diferencia_monedas = 50
 var cantidad_monedas = 0
-var vidas = 3
-var puntos = 0
 var monedas = 0
-var cambios = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,9 +33,9 @@ func _on_Bandera_Final_body_entered(body):
 		$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = true
 		$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = false
 		$Jugador.pararJugador()
-		puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
-		#print (puntos)
-		#get_tree().paused = true
+		Puntos.puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
+		Puntos.actualizar_puntos()
+	
 
 func crear_monedas():
 	
@@ -48,7 +46,7 @@ func crear_monedas():
 	#lista_vidas.append(nueva_moneda)
 
 func crear_vidas():
-	for i in 3:
+	for i in vidas:
 		var nueva_vida = Corazones.instance()
 		get_tree().get_nodes_in_group("Gui_Corazones")[0].add_child(nueva_vida)
 		nueva_vida.global_position.x += diferencia_corazones * i
@@ -60,8 +58,6 @@ func perder_vidas():
 	if vidas >= 0:
 		lista_vidas[vidas].queue_free()
 	
-func modificar_numero_cambios():
-	cambios += 1;
 
 # Menu si GANA
 func _on_Boton_Siguiente_pressed():
@@ -71,10 +67,8 @@ func _on_Boton_Siguiente_pressed():
 func _on_Boton_Reiniciar_pressed():
 	get_tree().change_scene(nivel_actual)
 
-
 func _on_Boton_Menu_pressed():
 	get_tree().change_scene("res://Scenes/Menu.tscn")
-
 
 func _on_Boton_Salir_pressed():
 	get_tree().quit()
