@@ -27,7 +27,7 @@ func get_input():
 	if Input.is_action_pressed("ui_jump"):
 		if is_on_floor():
 			gravedad = 2200
-			velocidad.y = fuerza_salto
+			velocidad.y += fuerza_salto
 			salto = true
 	
 	if Input.is_action_pressed("ui_number_1"): 
@@ -67,7 +67,7 @@ func _physics_process(delta):
 		posicion_inicial()
 	
 	velocidad.y += gravedad * delta
-	print(velocidad.y)
+	#print(velocidad.y)
 	velocidad = move_and_slide(velocidad, Vector2(0, -1))
 	
 	tiempo_puede_morir += delta
