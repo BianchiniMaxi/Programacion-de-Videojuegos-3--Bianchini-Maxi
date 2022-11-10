@@ -22,33 +22,29 @@ func posicion_inicial():
 	
 
 func get_input():
-	velocidad.x = 0
-	velocidad.x += velocidad_correr
+	velocidad.x = velocidad_correr
 	
-	if Input.is_action_just_pressed("ui_jump"):
+	if Input.is_action_pressed("ui_jump"):
 		if is_on_floor():
 			gravedad = 2200
 			velocidad.y = fuerza_salto
 			salto = true
 	
-	if Input.is_action_just_pressed("ui_number_1"): #&& personajeSkin != 1:
-		#get_parent().modificar_numero_cambios()
+	if Input.is_action_pressed("ui_number_1"): 
 		$Sprite.texture = textura1
 		velocidad_correr = 600
 		fuerza_salto = -850
-		#personajeSkin = 1
-	if Input.is_action_just_pressed("ui_number_2"): #&& personajeSkin != 2:
-		#get_parent().modificar_numero_cambios()
+		
+	if Input.is_action_pressed("ui_number_2"):
 		$Sprite.texture = textura2
 		velocidad_correr = 600
 		fuerza_salto = -1400
-		#personajeSkin = 2
-	if Input.is_action_just_pressed("ui_number_3"): #&& personajeSkin != 3:
-		#get_parent().modificar_numero_cambios()
+		
+	if Input.is_action_pressed("ui_number_3"): 
 		$Sprite.texture = textura3
 		velocidad_correr = 800
 		fuerza_salto = -850
-		#personajeSkin = 3
+		
 
 func se_murio():
 	if  tiempo_puede_morir > 1:
@@ -57,8 +53,6 @@ func se_murio():
 		 muerto = false
 
 func _physics_process(delta):
-	tiempo_puede_morir += delta
-	
 	get_input()
 	
 	if salto && velocidad.y >= 0:
@@ -73,7 +67,10 @@ func _physics_process(delta):
 		posicion_inicial()
 	
 	velocidad.y += gravedad * delta
+	print(velocidad.y)
 	velocidad = move_and_slide(velocidad, Vector2(0, -1))
+	
+	tiempo_puede_morir += delta
 
 func pararJugador():
 	velocidad_correr = 0

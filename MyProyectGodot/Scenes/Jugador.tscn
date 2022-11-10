@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sripts/Jugador.gd" type="Script" id=1]
+[ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=2]
+[ext_resource path="res://Image/Player/Player.png" type="Texture" id=3]
+[ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 136.667, 140 )
+
+[sub_resource type="RectangleShape2D" id=54]
+extents = Vector2( 42, 40 )
+
+[node name="Jugador" type="KinematicBody2D" groups=["Jugador"]]
+position = Vector2( 350, -100 )
+script = ExtResource( 1 )
+textura1 = ExtResource( 3 )
+textura2 = ExtResource( 2 )
+textura3 = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPies" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
+scale = Vector2( 0.3, 0.3 )
+shape = SubResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 150, -300 )
+current = true
+zoom = Vector2( 2, 2 )
+smoothing_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision Cuerpo" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionCuerpo" type="CollisionShape2D" parent="Collision Cuerpo"]
+position = Vector2( 0, -3 )
+shape = SubResource( 54 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="body_entered" from="Collision Cuerpo" to="." method="_on_Collision_Cuerpo_body_entered"]

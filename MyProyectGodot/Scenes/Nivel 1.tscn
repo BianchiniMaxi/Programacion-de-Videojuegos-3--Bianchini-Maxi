@@ -1,15 +1,12 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Sripts/Pinches.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Corazones.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sripts/Jugador.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Jugador.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sripts/Niveles.gd" type="Script" id=4]
 [ext_resource path="res://Sripts/Monedas.gd" type="Script" id=5]
 [ext_resource path="res://Image/Icons/Moneda.png" type="Texture" id=6]
-[ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=7]
-[ext_resource path="res://Image/Player/Player.png" type="Texture" id=8]
 [ext_resource path="res://Image/Icons/Bandera.png" type="Texture" id=9]
-[ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=10]
 [ext_resource path="res://Image/Icons/Pinches.png" type="Texture" id=11]
 [ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=12]
 [ext_resource path="res://Fonts/ButtonsDynamicFont.tres" type="DynamicFont" id=13]
@@ -402,12 +399,6 @@ points = PoolVector2Array( 0, 0, 0, 0, 128, 128, 0, 128 )
 } ]
 15/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 136.667, 140 )
-
-[sub_resource type="RectangleShape2D" id=54]
-extents = Vector2( 42, 39.5 )
-
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 56, 58 )
 
@@ -428,47 +419,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Jugador" type="KinematicBody2D" parent="." groups=["Jugador"]]
-position = Vector2( 350, -100 )
-script = ExtResource( 3 )
-textura1 = ExtResource( 8 )
-textura2 = ExtResource( 7 )
-textura3 = ExtResource( 10 )
-
-[node name="Sprite" type="Sprite" parent="Jugador"]
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPies" type="CollisionShape2D" parent="Jugador"]
-scale = Vector2( 0.3, 0.3 )
-shape = SubResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Camera2D" type="Camera2D" parent="Jugador"]
-offset = Vector2( 150, -300 )
-current = true
-zoom = Vector2( 2, 2 )
-smoothing_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Collision Cuerpo" type="Area2D" parent="Jugador"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/Collision Cuerpo"]
-position = Vector2( 0, -2.5 )
-shape = SubResource( 54 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Jugador" parent="." instance=ExtResource( 3 )]
 
 [node name="Bandera Final" type="Area2D" parent="."]
 position = Vector2( 14000, -63 )
@@ -869,7 +820,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="body_entered" from="Jugador/Collision Cuerpo" to="Jugador" method="_on_Collision_Cuerpo_body_entered"]
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche2" to="Pinches/Pinche2" method="_on_Pinche_body_entered"]
