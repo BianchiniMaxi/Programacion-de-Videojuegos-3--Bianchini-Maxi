@@ -758,7 +758,6 @@ __meta__ = {
 [node name="POP UPs" type="CanvasLayer" parent="."]
 
 [node name="PopupPanel" type="Popup" parent="POP UPs"]
-visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
