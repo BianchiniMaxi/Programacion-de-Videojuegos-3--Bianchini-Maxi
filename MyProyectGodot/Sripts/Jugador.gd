@@ -26,6 +26,7 @@ func get_input():
 	
 	if Input.is_action_pressed("ui_jump"):
 		if is_on_floor():
+			get_tree().get_nodes_in_group("SFX")[0].get_node("Audio_salto").play()
 			gravedad = 2200
 			velocidad.y += fuerza_salto
 			salto = true
@@ -49,6 +50,7 @@ func get_input():
 func se_murio():
 	if  tiempo_puede_morir > 1:
 		muerto = true
+		get_tree().get_nodes_in_group("SFX")[0].get_node("Audio_muerte").play()
 	else:
 		 muerto = false
 
@@ -63,6 +65,7 @@ func _physics_process(delta):
 		posicion_inicial()
 	
 	if muerto == true:
+		get_tree().get_nodes_in_group("SFX")[0].get_node("Audio_muerte").play()
 		tiempo_puede_morir = 0
 		posicion_inicial()
 	

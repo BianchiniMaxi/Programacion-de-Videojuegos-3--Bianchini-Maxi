@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Sripts/Pinches.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Corazones.tscn" type="PackedScene" id=2]
@@ -7,12 +7,15 @@
 [ext_resource path="res://Sripts/Monedas.gd" type="Script" id=5]
 [ext_resource path="res://Image/Icons/Moneda.png" type="Texture" id=6]
 [ext_resource path="res://Image/Background/5ElttgR.png" type="Texture" id=7]
+[ext_resource path="res://Sounds/Coin.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Image/Icons/Bandera.png" type="Texture" id=9]
+[ext_resource path="res://Sounds/Jump.mp3" type="AudioStream" id=10]
 [ext_resource path="res://Image/Icons/Pinches.png" type="Texture" id=11]
 [ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=12]
 [ext_resource path="res://Fonts/ButtonsDynamicFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://Fonts/Dynamicfont.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Scenes/Monedas.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sounds/Muerte.mp3" type="AudioStream" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=55]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -431,6 +434,17 @@ motion_mirroring = Vector2( 1151.5, 0 )
 [node name="Sprite" type="Sprite" parent="Mapa/ParallaxBackground/ParallaxLayer"]
 position = Vector2( 386, -416 )
 texture = ExtResource( 7 )
+
+[node name="SFX" type="Node" parent="." groups=["SFX"]]
+
+[node name="Audio_moneda" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 8 )
+
+[node name="Audio_salto" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 10 )
+
+[node name="Audio_muerte" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 16 )
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
 

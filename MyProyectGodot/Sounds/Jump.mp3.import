@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Jump.mp3-0909d5fa0828dabe57ac5904e984a9f7.mp3str" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
