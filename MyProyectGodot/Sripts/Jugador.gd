@@ -1,23 +1,22 @@
 extends KinematicBody2D
 
-export (int) var gravedad = 2200
 export (int) var velocidad_correr = 600
 export (int) var fuerza_salto = -850
+export (int) var gravedad = 2200
 
 export (StreamTexture) var textura1
 export (StreamTexture) var textura2
 export (StreamTexture) var textura3
 
 var velocidad = Vector2()
-var muerto = false
 var personajeSkin = 1
-var tiempo_puede_morir = 0
+var muerto = false
 var salto = false
 
 func posicion_inicial():
 	muerto = false
-	position.y = -100
 	position.x = 200
+	position.y = -100
 	get_parent().perder_vidas()
 	
 
@@ -44,38 +43,33 @@ func get_input():
 		$Sprite.texture = textura3
 		velocidad_correr = 800
 		fuerza_salto = -850
+	
+
+func _physics_process(_delta):
+	if get_parent().vidas != 0:
 		
-
-func se_murio():
-	if  tiempo_puede_morir > 1:
-		muerto = true
-	else:
-		 muerto = false
-
-func _physics_process(delta):
-	get_input()
+		get_input()
+		
+		if salto && velocidad.y >= 0:
+			gravedad = 4000
+			salto = false
 	
-	if salto && velocidad.y >= 0:
-		gravedad = 4000
-		salto = false
+		if position.y > 300:
+			posicion_inicial()
 	
-	if position.y > 300:
-		posicion_inicial()
+		if muerto == true:
+			get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
+			posicion_inicial()
+		
+		velocidad.y += gravedad * _delta
+		velocidad = move_and_slide(velocidad, Vector2(0, -1))
 	
-	if muerto == true:
-		get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
-		tiempo_puede_morir = 0
-		posicion_inicial()
-	
-	velocidad.y += gravedad * delta
-	velocidad = move_and_slide(velocidad, Vector2(0, -1))
-	
-	tiempo_puede_morir += delta
+		
 
 func pararJugador():
 	velocidad_correr = 0
 
 func _on_Collision_Cuerpo_body_entered(body):
-	if body.is_in_group("Mapa")  && muerto == false: 
-		se_murio()
+	if body.is_in_group("Mapa") && muerto == false: 
+		muerto = true
 	

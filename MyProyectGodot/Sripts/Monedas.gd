@@ -6,3 +6,4 @@ func _on_Moneda_body_entered(body):
 		get_parent().get_parent().agarrar_moneda()
 		get_parent().get_parent().crear_monedas()
 		queue_free()
+		
