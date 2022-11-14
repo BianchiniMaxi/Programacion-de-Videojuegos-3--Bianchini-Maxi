@@ -8,8 +8,10 @@ export (StreamTexture) var textura1
 export (StreamTexture) var textura2
 export (StreamTexture) var textura3
 
+
 var frenado_por_tutorial = false
 var velocidad = Vector2()
+var tiempo_tutorial = 0
 var personajeSkin = 1
 var muerto = false
 var salto = false
@@ -47,7 +49,7 @@ func get_input():
 	
 
 func _physics_process(_delta):
-	if get_parent().menu_activo != true:
+	if get_parent().menu_activo != true && !frenado_por_tutorial:
 		
 		get_input()
 		
@@ -65,6 +67,13 @@ func _physics_process(_delta):
 		velocidad.y += gravedad * _delta
 		velocidad = move_and_slide(velocidad, Vector2(0, -1))
 	
+	if frenado_por_tutorial == true:
+		tiempo_tutorial += _delta
+		if tiempo_tutorial >= 5:
+			velocidad_correr = 600
+			frenado_por_tutorial = false
+			tiempo_tutorial = 0
+			get_parent().ocultar_tutorial()
 		
 
 func pararJugador():

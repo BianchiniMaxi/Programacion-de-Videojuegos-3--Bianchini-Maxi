@@ -2,6 +2,8 @@ extends Control
 
 func _ready():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _on_Boton_Comenzar_pressed():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
