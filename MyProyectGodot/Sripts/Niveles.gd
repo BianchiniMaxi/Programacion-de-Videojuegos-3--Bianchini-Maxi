@@ -9,7 +9,7 @@ export (float) var vidas
 var diferencia_corazones = 80
 var diferencia_monedas = 50
 var cantidad_monedas = 0
-var menu_perdio = false
+var menu_activo = false
 var lista_vidas = []
 var monedas = 0
 
@@ -27,14 +27,14 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Scenes/Menu.tscn")
 	
-	if vidas == 0 && menu_perdio != true:
+	if vidas == 0 && menu_activo != true:
 		$"POP UPs"/PopupPanel.popup()
 		$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = false
 		$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = true
 		get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 		get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
 		$Jugador.pararJugador()
-		menu_perdio = true
+		menu_activo = true
 		
 
 func _on_Bandera_Final_body_entered(body):
@@ -42,13 +42,16 @@ func _on_Bandera_Final_body_entered(body):
 		$"POP UPs"/PopupPanel.popup()
 		$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = true
 		$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = false
-		$Jugador.pararJugador()
+		
 		get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 		get_tree().get_nodes_in_group("SFX")[0].get_node("WinLevel").play()
 		get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
 		
 		Puntos.puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
 		Puntos.actualizar_puntos()
+		
+		$Jugador.pararJugador()
+		menu_activo = true
 		
 
 func crear_monedas():
@@ -95,3 +98,12 @@ func _on_Boton_Menu_pressed():
 func _on_Boton_Salir_pressed():
 	get_tree().quit()
 	
+
+
+func _on_Primer_Tutorial_body_entered(body):
+	if body.is_in_group("Jugador"):
+		$"POP UPs"/PopupPanel.popup()
+		$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = false
+		$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = false
+		$"POP UPs"/PopupPanel.get_child(1).visible = true
+		$Jugador.pararJugador()

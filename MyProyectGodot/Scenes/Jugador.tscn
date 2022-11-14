@@ -9,7 +9,7 @@
 extents = Vector2( 136.667, 140 )
 
 [sub_resource type="RectangleShape2D" id=54]
-extents = Vector2( 42, 40 )
+extents = Vector2( 42, 42 )
 
 [node name="Jugador" type="KinematicBody2D" groups=["Jugador"]]
 position = Vector2( 350, -100 )
@@ -37,6 +37,8 @@ __meta__ = {
 offset = Vector2( 150, -300 )
 current = true
 zoom = Vector2( 2, 2 )
+limit_left = -250
+limit_right = 14000
 limit_smoothed = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
@@ -55,7 +57,7 @@ __meta__ = {
 }
 
 [node name="CollisionCuerpo" type="CollisionShape2D" parent="Collision Cuerpo"]
-position = Vector2( 0, -3 )
+position = Vector2( 0, -1 )
 shape = SubResource( 54 )
 __meta__ = {
 "_edit_lock_": true
