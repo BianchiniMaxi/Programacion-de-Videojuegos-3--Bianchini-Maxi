@@ -8,7 +8,8 @@ func _ready():
 func _on_Boton_Comenzar_pressed():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
-	get_tree().change_scene("res://Scenes/Nivel 1.tscn")
+	GameData.cargar_partida()
+	get_tree().change_scene(GameData.nivel)#"res://Scenes/Nivel 1.tscn")
 	Puntos.puntos = 0
 	
 

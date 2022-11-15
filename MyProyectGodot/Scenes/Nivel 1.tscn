@@ -2487,7 +2487,7 @@ stream = ExtResource( 18 )
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 14000, -63 )
+position = Vector2( 1000, -63 )
 __meta__ = {
 "_edit_lock_": true
 }

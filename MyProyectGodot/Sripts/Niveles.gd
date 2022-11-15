@@ -40,7 +40,8 @@ func _physics_process(_delta):
 			$"POP UPs"/PopupPanel.get_child(2).visible = true
 			$"Blur".environment.dof_blur_near_enabled = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			ocultar_tutorial()
+			if(nivel_actual == "res://Scenes/Nivel 1.tscn"):
+				ocultar_tutorial()
 			menu_activo = true
 	
 	
@@ -67,6 +68,8 @@ func _on_Bandera_Final_body_entered(body):
 		$"POP UPs"/PopupPanel.get_child(0).visible = true
 		$"POP UPs"/PopupPanel.get_child(1).visible = false
 		$"Blur".environment.dof_blur_near_enabled = true
+		
+		
 		#$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = true
 		#$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = false
 		
@@ -76,6 +79,10 @@ func _on_Bandera_Final_body_entered(body):
 		
 		Puntos.puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
 		Puntos.actualizar_puntos()
+		
+		GameData.puntos = Puntos.puntos
+		GameData.nivel = siguiente_nivel
+		GameData.guardar_partida()
 		
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$Jugador.pararJugador(false)

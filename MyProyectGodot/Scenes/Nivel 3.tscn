@@ -2902,7 +2902,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Brur" type="WorldEnvironment" parent="."]
+[node name="Blur" type="WorldEnvironment" parent="."]
 environment = SubResource( 139 )
 
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
@@ -2929,3 +2929,4 @@ environment = SubResource( 139 )
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
+[connection signal="pressed" from="POP UPs/PopupPanel/Pausa/Boton Menu" to="." method="_on_Boton_Menu_pressed"]

@@ -2434,7 +2434,7 @@ stream = ExtResource( 18 )
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 14000, -63 )
+position = Vector2( 1000, -63 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -3024,3 +3024,4 @@ environment = SubResource( 158 )
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
+[connection signal="pressed" from="POP UPs/PopupPanel/Pausa/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
