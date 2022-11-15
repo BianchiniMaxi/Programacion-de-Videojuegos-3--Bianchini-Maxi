@@ -12,10 +12,10 @@ func _on_Boton_Comenzar_pressed():
 	Puntos.puntos = 0
 	
 
-func _on_Boton_Instrucciones_pressed():
+func _on_Boton_Creditos_pressed():
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	$Titulo.visible = false
-	$Instrucciones.visible = true
+	$Creditos.visible = true
 	
 
 func _on_Boton_Salir_pressed():
@@ -25,5 +25,5 @@ func _on_Boton_Salir_pressed():
 func _on_Boton_Menu_pressed():
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	$Titulo.visible = true
-	$Instrucciones.visible = false
+	$Creditos.visible = false
 	

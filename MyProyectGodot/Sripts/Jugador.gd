@@ -30,6 +30,8 @@ func get_input():
 		if is_on_floor():
 			gravedad = 2200
 			velocidad.y += fuerza_salto
+			if velocidad.y > fuerza_salto:
+				velocidad.y = fuerza_salto
 			salto = true
 	
 	if Input.is_action_pressed("ui_number_1"): 
@@ -70,14 +72,15 @@ func _physics_process(_delta):
 	if frenado_por_tutorial == true:
 		tiempo_tutorial += _delta
 		if tiempo_tutorial >= 5:
-			velocidad_correr = 600
+			#velocidad_correr = 600
 			frenado_por_tutorial = false
 			tiempo_tutorial = 0
 			get_parent().ocultar_tutorial()
 		
 
-func pararJugador():
-	frenado_por_tutorial = true
+func pararJugador(valor):
+	if valor:
+		frenado_por_tutorial = true
 	velocidad_correr = 0
 
 func _on_Collision_Cuerpo_body_entered(body):

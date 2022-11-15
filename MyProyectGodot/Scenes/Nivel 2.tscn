@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://Scenes/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=2]
@@ -2379,6 +2379,9 @@ data = PoolByteArray( 73, 68, 51, 4, 0, 0, 0, 0, 1, 0, 84, 88, 88, 88, 0, 0, 0, 
 [sub_resource type="RectangleShape2D" id=157]
 extents = Vector2( 56, 58 )
 
+[sub_resource type="Environment" id=158]
+background_mode = 4
+
 [node name="Nivel 2" type="Node2D"]
 script = ExtResource( 6 )
 siguiente_nivel = "Scenes/Nivel 3.tscn"
@@ -2865,15 +2868,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Panel" type="Panel" parent="POP UPs/PopupPanel"]
-margin_right = 1024.0
-margin_bottom = 600.0
-__meta__ = {
-"_edit_lock_": true,
-"_editor_description_": ""
-}
-
-[node name="TituloGanar" type="Label" parent="POP UPs/PopupPanel/Panel"]
+[node name="TituloGanar" type="Label" parent="POP UPs/PopupPanel"]
+visible = false
 margin_left = 168.5
 margin_top = 140.0
 margin_right = 855.5
@@ -2892,7 +2888,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Boton Siguiente" type="Button" parent="POP UPs/PopupPanel/Panel/TituloGanar"]
+[node name="Boton Siguiente" type="Button" parent="POP UPs/PopupPanel/TituloGanar"]
 margin_left = 283.5
 margin_top = 300.0
 margin_right = 413.5
@@ -2904,19 +2900,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Puntos" type="Label" parent="POP UPs/PopupPanel/Panel/TituloGanar" groups=["Puntos"]]
+[node name="Puntos" type="Label" parent="POP UPs/PopupPanel/TituloGanar" groups=["Puntos"]]
 margin_left = 360.5
 margin_top = 139.5
 margin_right = 510.5
 margin_bottom = 181.5
 custom_fonts/font = ExtResource( 13 )
 
-[node name="TituloPerder" type="Label" parent="POP UPs/PopupPanel/Panel"]
+[node name="TituloPerder" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
 margin_left = 265.0
 margin_top = 214.5
 margin_right = 759.0
-margin_bottom = 346.5
+margin_bottom = 391.5
 custom_fonts/font = ExtResource( 13 )
 text = "GAME OVER!
 You have not been able to pass the level.
@@ -2928,7 +2924,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Container" type="VBoxContainer" parent="POP UPs/PopupPanel/Panel/TituloPerder"]
+[node name="Container" type="VBoxContainer" parent="POP UPs/PopupPanel/TituloPerder"]
 margin_left = 188.0
 margin_top = 200.0
 margin_right = 318.0
@@ -2937,7 +2933,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Boton Reiniciar" type="Button" parent="POP UPs/PopupPanel/Panel/TituloPerder/Container"]
+[node name="Boton Reiniciar" type="Button" parent="POP UPs/PopupPanel/TituloPerder/Container"]
 margin_right = 130.0
 margin_bottom = 28.0
 focus_mode = 0
@@ -2947,7 +2943,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Boton Menu" type="Button" parent="POP UPs/PopupPanel/Panel/TituloPerder/Container"]
+[node name="Boton Menu" type="Button" parent="POP UPs/PopupPanel/TituloPerder/Container"]
 margin_top = 32.0
 margin_right = 130.0
 margin_bottom = 60.0
@@ -2959,7 +2955,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Boton Salir" type="Button" parent="POP UPs/PopupPanel/Panel/TituloPerder/Container"]
+[node name="Boton Salir" type="Button" parent="POP UPs/PopupPanel/TituloPerder/Container"]
 margin_top = 64.0
 margin_right = 130.0
 margin_bottom = 92.0
@@ -2969,6 +2965,35 @@ text = "QUIT"
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Pausa" type="Label" parent="POP UPs/PopupPanel"]
+visible = false
+margin_left = 168.5
+margin_top = 140.0
+margin_right = 855.5
+margin_bottom = 460.0
+custom_fonts/font = ExtResource( 13 )
+text = "Pause
+Press Scape to continue."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boton Menu" type="Button" parent="POP UPs/PopupPanel/Pausa"]
+margin_left = 283.5
+margin_top = 300.0
+margin_right = 413.5
+margin_bottom = 328.0
+custom_fonts/font = ExtResource( 14 )
+text = "MENU"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Blur" type="WorldEnvironment" parent="."]
+environment = SubResource( 158 )
 
 [connection signal="body_entered" from="Bandera Final" to="." method="_on_Bandera_Final_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche" to="Pinches/Pinche" method="_on_Pinche_body_entered"]
@@ -2995,7 +3020,7 @@ __meta__ = {
 [connection signal="body_entered" from="Monedas/Moneda6" to="Monedas/Moneda6" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda7" to="Monedas/Moneda7" method="_on_Moneda_body_entered"]
 [connection signal="body_entered" from="Monedas/Moneda8" to="Monedas/Moneda8" method="_on_Moneda_body_entered"]
-[connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloGanar/Boton Siguiente" to="." method="_on_Boton_Siguiente_pressed"]
-[connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
-[connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
-[connection signal="pressed" from="POP UPs/PopupPanel/Panel/TituloPerder/Container/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
+[connection signal="pressed" from="POP UPs/PopupPanel/TituloGanar/Boton Siguiente" to="." method="_on_Boton_Siguiente_pressed"]
+[connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
+[connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
+[connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
