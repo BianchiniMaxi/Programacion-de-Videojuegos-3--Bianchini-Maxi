@@ -6,72 +6,84 @@ export (PackedScene) var Monedas
 export (String) var nivel_actual
 export (float) var vidas 
 
-var arreglo_de_instrucciones =  [false,false,false,false]
-var contador_instrucciones = 0
-var diferencia_corazones = 80
-var diferencia_monedas = 50
-var cantidad_monedas = 0
-var menu_activo = false
-var lista_vidas = []
-var monedas = 0
+var arreglo_de_instrucciones
+var contador_instrucciones
+var diferencia_corazones
+var diferencia_monedas
+var cantidad_monedas
+var menu_activo
+var lista_vidas
+var monedas
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	crear_vidas()
+	
 	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
+	arreglo_de_instrucciones =  [false,false,false,false]
+	contador_instrucciones = 0
+	diferencia_corazones = 80
+	diferencia_monedas = 50
+	cantidad_monedas = 0
+	menu_activo = false
+	lista_vidas = []
+	monedas = 0
+	
+	crear_vidas()
 	
 
 func agarrar_moneda():
 	monedas += 1
 	
-
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		if $"Blur".environment.dof_blur_near_enabled:
-			$"POP UPs"/PopupPanel.popup()
-			$"POP UPs"/PopupPanel.get_child(2).visible = false
-			$"Blur".environment.dof_blur_near_enabled = false
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-			menu_activo = false
-			$Jugador.tiempo_tutorial = 5
-		else:
+func getInput():
+	if Input.is_action_just_pressed("ui_pause"):
+		if !menu_activo:
 			$"POP UPs"/PopupPanel.popup()
 			$"POP UPs"/PopupPanel.get_child(2).visible = true
 			$"Blur".environment.dof_blur_near_enabled = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			if(nivel_actual == "res://Scenes/Nivel 1.tscn"):
-				ocultar_tutorial()
+			$Jugador.pararJugador(true,false)
 			menu_activo = true
+		else:
+			if $"POP UPs"/PopupPanel.get_child(2).visible:
+				$"POP UPs"/PopupPanel.get_child(2).visible = false
+				$"Blur".environment.dof_blur_near_enabled = false
+				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+				$Jugador.pararJugador(false,false)
+				menu_activo = false
+			
+
+func _physics_process(_delta):
 	
+	getInput()
 	
-	if vidas == 0 && menu_activo != true:
-		$"POP UPs"/PopupPanel.popup()
-		#$"POP UPs"/PopupPanel.get_child(0).visible = true
-		#$"POP UPs"/PopupPanel.get_child(1).get_child(0).visible = false
-		$"POP UPs"/PopupPanel.get_child(0).visible = false
-		$"POP UPs"/PopupPanel.get_child(1).visible = true
-		$"Blur".environment.dof_blur_near_enabled = true
+	if vidas == 0 && !menu_activo:
+		menuMuerte()
 		
-		get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-		get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
-		
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$Jugador.pararJugador(false)
-		menu_activo = true
+	
+
+func menuMuerte():
+	$"POP UPs"/PopupPanel.popup()
+	$"POP UPs"/PopupPanel.get_child(0).visible = false
+	$"POP UPs"/PopupPanel.get_child(1).visible = true
+	$"Blur".environment.dof_blur_near_enabled = true
+	menu_activo = true
+	
+	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$Jugador.pararJugador(true,false)
 	
 
 func _on_Bandera_Final_body_entered(body):
 	if body.is_in_group("Jugador"):
 		$"POP UPs"/PopupPanel.popup()
-		#$"POP UPs"/PopupPanel.get_child(0).visible = true
 		$"POP UPs"/PopupPanel.get_child(0).visible = true
 		$"POP UPs"/PopupPanel.get_child(1).visible = false
 		$"Blur".environment.dof_blur_near_enabled = true
-		
-		
-		#$"POP UPs"/PopupPanel.get_child(0).get_child(0).visible = true
-		#$"POP UPs"/PopupPanel.get_child(0).get_child(1).visible = false
+		menu_activo = true
 		
 		get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 		get_tree().get_nodes_in_group("SFX")[0].get_node("WinLevel").play()
@@ -80,13 +92,18 @@ func _on_Bandera_Final_body_entered(body):
 		Puntos.puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
 		Puntos.actualizar_puntos()
 		
-		GameData.puntos = Puntos.puntos
-		GameData.nivel = siguiente_nivel
+		if siguiente_nivel != "Scenes/Menu.tscn":
+			GameData.puntos = Puntos.puntos
+			GameData.nivel = siguiente_nivel
+		else:
+			GameData.puntos = 0
+			GameData.nivel = "res://Scenes/Nivel 1.tscn"
+		
 		GameData.guardar_partida()
 		
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$Jugador.pararJugador(false)
-		menu_activo = true
+		$Jugador.pararJugador(true,false)
+		
 	
 
 func crear_monedas():
@@ -125,8 +142,8 @@ func _on_Boton_Reiniciar_pressed():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	get_tree().change_scene(nivel_actual)
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$"Blur".environment.dof_blur_near_enabled = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 
 func _on_Boton_Menu_pressed():
@@ -140,12 +157,12 @@ func _on_Boton_Salir_pressed():
 	
 
 func _on_Tutorial_body_entered(body):
-	print("LLAMADO A CONTADOR:", contador_instrucciones)
 	if body.is_in_group("Jugador") && !arreglo_de_instrucciones[contador_instrucciones]:
 		$"POP UPs"/PopupPanel.popup()
 		$"POP UPs"/PopupPanel.get_child(contador_instrucciones + 3).visible = true
 		arreglo_de_instrucciones[contador_instrucciones] = true
-		$Jugador.pararJugador(true)
+		$Jugador.pararJugador(true,true)
+		menu_activo = true
 		
 	contador_instrucciones += 1
 	
@@ -155,4 +172,5 @@ func ocultar_tutorial():
 	$"POP UPs"/PopupPanel.get_child(4).visible = false
 	$"POP UPs"/PopupPanel.get_child(5).visible = false
 	$"POP UPs"/PopupPanel.get_child(6).visible = false
+	menu_activo = false
 	

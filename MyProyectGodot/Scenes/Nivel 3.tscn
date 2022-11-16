@@ -2433,7 +2433,7 @@ stream = ExtResource( 18 )
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 14000, -66 )
+position = Vector2( 4000, -66 )
 
 [node name="Sprite" type="Sprite" parent="Bandera Final"]
 texture = ExtResource( 4 )
