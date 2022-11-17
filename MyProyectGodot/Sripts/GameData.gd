@@ -2,11 +2,13 @@ extends Node
 
 var nivel
 var puntos
+var mayorpuntaje
 var datos_partida
 
 func _ready():
 	datos_partida  = {
 	puntos = 0,
+	mayorpuntaje = 0,
 	nivel = "res://Scenes/Nivel 1.tscn"
 	}
 	
@@ -17,6 +19,7 @@ func guardar_partida():
 	
 	var datos_guardar = datos_partida
 	datos_guardar.puntos = puntos
+	datos_guardar.mayorpuntaje = mayorpuntaje
 	datos_guardar.nivel = nivel
 	
 	save.store_line(to_json(datos_guardar))
@@ -26,6 +29,7 @@ func cargar_partida():
 	var cargar = File.new()
 	if !cargar.file_exists("user://RunAndJump_autosave.sav"):
 		puntos = 0
+		mayorpuntaje = 0
 		nivel = "res://Scenes/Nivel 1.tscn"
 		return
 	
@@ -37,7 +41,13 @@ func cargar_partida():
 			datos_cargar = dato_provisorio
 			
 	puntos = datos_cargar.puntos
+	mayorpuntaje = datos_cargar.mayorpuntaje
 	nivel = datos_cargar.nivel
 	
 	cargar.close()
+	
+	
+func compararPuntajes(nuevoPuntaje):
+	if nuevoPuntaje > mayorpuntaje:
+		mayorpuntaje = nuevoPuntaje
 	

@@ -32,7 +32,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Container" type="VBoxContainer" parent="Titulo"]
+[node name="Sin Partidad Guardada" type="VBoxContainer" parent="Titulo"]
 margin_left = 15.0
 margin_top = 105.0
 margin_right = 145.0
@@ -41,7 +41,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Boton Comenzar" type="Button" parent="Titulo/Container"]
+[node name="Boton Comenzar" type="Button" parent="Titulo/Sin Partidad Guardada"]
 margin_right = 130.0
 margin_bottom = 28.0
 focus_mode = 0
@@ -51,19 +51,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Boton Instrucciones" type="Button" parent="Titulo/Container"]
+[node name="Boton Creditos" type="Button" parent="Titulo/Sin Partidad Guardada"]
 margin_top = 32.0
 margin_right = 130.0
 margin_bottom = 60.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 4 )
-text = "CREDITOS"
+text = "CREDITS"
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": true
 }
 
-[node name="Boton Salir" type="Button" parent="Titulo/Container"]
+[node name="Boton Salir" type="Button" parent="Titulo/Sin Partidad Guardada"]
 margin_top = 64.0
 margin_right = 130.0
 margin_bottom = 92.0
@@ -74,14 +74,83 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Partida Guardada" type="VBoxContainer" parent="Titulo"]
+visible = false
+margin_left = 6.0
+margin_top = 105.0
+margin_right = 151.0
+margin_bottom = 229.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boton Nueva Partida" type="Button" parent="Titulo/Partida Guardada"]
+margin_right = 145.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 4 )
+text = "NEW GAME"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Boton Continuar Partida" type="Button" parent="Titulo/Partida Guardada"]
+margin_top = 32.0
+margin_right = 145.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 4 )
+text = "LOAD GAME"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BotonCreditos" type="Button" parent="Titulo/Partida Guardada"]
+margin_top = 64.0
+margin_right = 145.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 4 )
+text = "CREDITS"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="Boton Salir" type="Button" parent="Titulo/Partida Guardada"]
+margin_top = 96.0
+margin_right = 145.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 4 )
+text = "QUIT"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Puntaje" type="Label" parent="Titulo"]
+margin_left = -34.0
+margin_top = 244.0
+margin_right = 124.0
+margin_bottom = 346.0
+custom_fonts/font = ExtResource( 3 )
+text = "Best Score:"
+align = 1
+valign = 1
+
+[node name="Mayor Puntaje" type="Label" parent="Titulo/Puntaje" groups=["Puntos"]]
+margin_left = 159.0
+margin_top = 30.0
+margin_right = 309.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 3 )
+
 [node name="Creditos" type="Label" parent="."]
 visible = false
+anchor_right = 0.181
 margin_left = 35.0
 margin_top = 17.0
 margin_right = 1002.0
 margin_bottom = 550.0
 custom_fonts/font = ExtResource( 3 )
-text = "CREDITOS VARIOS"
+text = "CREDITS"
+align = 1
 __meta__ = {
 "_edit_lock_": true
 }
@@ -98,6 +167,45 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="ARTE" type="Label" parent="Creditos"]
+margin_left = 14.0
+margin_top = 107.0
+margin_right = 283.0
+margin_bottom = 298.0
+custom_fonts/font = ExtResource( 3 )
+text = "ART 
+
+SPRITE RESOURCE
+spriters-resource.com
+
+IMGUR
+imgur.com
+
+"
+align = 1
+
+[node name="MUSICA" type="Label" parent="Creditos"]
+margin_left = 730.0
+margin_top = 118.0
+margin_right = 942.0
+margin_bottom = 275.0
+custom_fonts/font = ExtResource( 3 )
+text = "MUSIC
+
+FANDON
+fandom.com"
+align = 1
+
+[node name="Label" type="Label" parent="Creditos"]
+margin_left = 249.0
+margin_top = 414.0
+margin_right = 705.0
+margin_bottom = 501.0
+custom_fonts/font = ExtResource( 3 )
+text = "A game by Maximiliano Bianchini"
+align = 1
+valign = 1
+
 [node name="Music" type="Node" parent="." groups=["Music"]]
 
 [node name="Menu" type="AudioStreamPlayer" parent="Music"]
@@ -108,7 +216,11 @@ stream = ExtResource( 5 )
 [node name="Botones" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 6 )
 
-[connection signal="pressed" from="Titulo/Container/Boton Comenzar" to="." method="_on_Boton_Comenzar_pressed"]
-[connection signal="pressed" from="Titulo/Container/Boton Instrucciones" to="." method="_on_Boton_Creditos_pressed"]
-[connection signal="pressed" from="Titulo/Container/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
+[connection signal="pressed" from="Titulo/Sin Partidad Guardada/Boton Comenzar" to="." method="_on_Boton_Comenzar_pressed"]
+[connection signal="pressed" from="Titulo/Sin Partidad Guardada/Boton Creditos" to="." method="_on_Boton_Creditos_pressed"]
+[connection signal="pressed" from="Titulo/Sin Partidad Guardada/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
+[connection signal="pressed" from="Titulo/Partida Guardada/Boton Nueva Partida" to="." method="_on_Boton_Comenzar_pressed"]
+[connection signal="pressed" from="Titulo/Partida Guardada/Boton Continuar Partida" to="." method="_on_Boton_Continuar_Partida_pressed"]
+[connection signal="pressed" from="Titulo/Partida Guardada/BotonCreditos" to="." method="_on_Boton_Creditos_pressed"]
+[connection signal="pressed" from="Titulo/Partida Guardada/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
 [connection signal="pressed" from="Creditos/Boton Menu" to="." method="_on_Boton_Menu_pressed"]

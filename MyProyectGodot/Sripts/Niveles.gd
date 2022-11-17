@@ -91,14 +91,15 @@ func _on_Bandera_Final_body_entered(body):
 		
 		Puntos.puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
 		Puntos.actualizar_puntos()
-		
+		#PONER LA PARTE DE GUARDAR EN UNA FUNCION Y LOS DEMAS SCRIPTS NO DEBERIAN ALTERAR LOS VALORES DE GAMEDATA; SINO USAR UNA FUNCION
 		if siguiente_nivel != "Scenes/Menu.tscn":
 			GameData.puntos = Puntos.puntos
 			GameData.nivel = siguiente_nivel
 		else:
 			GameData.puntos = 0
 			GameData.nivel = "res://Scenes/Nivel 1.tscn"
-		
+			
+		GameData.compararPuntajes(Puntos.puntos)
 		GameData.guardar_partida()
 		
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
