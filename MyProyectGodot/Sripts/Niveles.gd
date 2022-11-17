@@ -52,7 +52,22 @@ func getInput():
 				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 				$Jugador.pararJugador(false,false)
 				menu_activo = false
+	
+	if Input.is_action_just_pressed("ui_jump") && $"POP UPs"/PopupPanel.get_child(1).visible:
+			get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+			get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+			get_tree().change_scene(nivel_actual)
+			$"Blur".environment.dof_blur_near_enabled = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	else:
+		if Input.is_action_just_pressed("ui_jump") && $"POP UPs"/PopupPanel.get_child(0).visible:
+				get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+				get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+				get_tree().change_scene(siguiente_nivel)
+				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 			
+		
+	
 
 func _physics_process(_delta):
 	
@@ -98,6 +113,7 @@ func _on_Bandera_Final_body_entered(body):
 		else:
 			GameData.puntos = 0
 			GameData.nivel = "res://Scenes/Nivel 1.tscn"
+			GameData.tutorialrealizado = false
 			
 		GameData.compararPuntajes(Puntos.puntos)
 		GameData.guardar_partida()
@@ -153,12 +169,8 @@ func _on_Boton_Menu_pressed():
 	get_tree().change_scene("res://Scenes/Menu.tscn")
 	
 
-func _on_Boton_Salir_pressed():
-	get_tree().quit()
-	
-
 func _on_Tutorial_body_entered(body):
-	if body.is_in_group("Jugador") && !arreglo_de_instrucciones[contador_instrucciones]:
+	if body.is_in_group("Jugador") && !arreglo_de_instrucciones[contador_instrucciones] && !GameData.tutorialrealizado:
 		$"POP UPs"/PopupPanel.popup()
 		$"POP UPs"/PopupPanel.get_child(contador_instrucciones + 3).visible = true
 		arreglo_de_instrucciones[contador_instrucciones] = true
@@ -166,6 +178,8 @@ func _on_Tutorial_body_entered(body):
 		menu_activo = true
 		
 	contador_instrucciones += 1
+	if contador_instrucciones >= 4:
+		GameData.tutorialrealizado = true
 	
 
 func ocultar_tutorial():

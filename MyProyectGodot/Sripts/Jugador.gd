@@ -82,7 +82,7 @@ func _physics_process(_delta):
 	else:
 		if tutorialactivo:
 			tiempo_tutorial += _delta
-			if tiempo_tutorial >= 5:
+			if tiempo_tutorial >= 6:
 				activarJugador()
 	
 	

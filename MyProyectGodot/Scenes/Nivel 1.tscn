@@ -2487,7 +2487,7 @@ stream = ExtResource( 18 )
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
 
 [node name="Bandera Final" type="Area2D" parent="."]
-position = Vector2( 5000, -63 )
+position = Vector2( 14000, -63 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2812,7 +2812,6 @@ __meta__ = {
 [node name="POP UPs" type="CanvasLayer" parent="."]
 
 [node name="PopupPanel" type="Popup" parent="POP UPs"]
-visible = true
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
@@ -2821,10 +2820,8 @@ __meta__ = {
 
 [node name="TituloGanar" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
-margin_left = 168.5
-margin_top = 140.0
-margin_right = 855.5
-margin_bottom = 460.0
+margin_right = 1024.0
+margin_bottom = 600.0
 custom_fonts/font = ExtResource( 14 )
 text = "CONGRATULATIONS!
 You were able to pass the level.
@@ -2840,30 +2837,32 @@ __meta__ = {
 }
 
 [node name="Boton Siguiente" type="Button" parent="POP UPs/PopupPanel/TituloGanar"]
-margin_left = 283.5
-margin_top = 300.0
-margin_right = 413.5
-margin_bottom = 328.0
+margin_left = 447.0
+margin_top = 450.0
+margin_right = 577.0
+margin_bottom = 478.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 13 )
-text = "SIGUIENTE NIVEL"
+text = "NEXT LEVEL"
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Puntos" type="Label" parent="POP UPs/PopupPanel/TituloGanar" groups=["Puntos"]]
-margin_left = 360.5
-margin_top = 139.5
-margin_right = 510.5
-margin_bottom = 181.5
+margin_left = 535.0
+margin_top = 275.0
+margin_right = 685.0
+margin_bottom = 325.0
 custom_fonts/font = ExtResource( 14 )
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TituloPerder" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
-margin_left = 265.0
-margin_top = 214.5
-margin_right = 759.0
-margin_bottom = 391.5
+margin_right = 1024.0
+margin_bottom = 600.0
 custom_fonts/font = ExtResource( 14 )
 text = "GAME OVER!
 You have not been able to pass the level.
@@ -2876,10 +2875,10 @@ __meta__ = {
 }
 
 [node name="Container" type="VBoxContainer" parent="POP UPs/PopupPanel/TituloPerder"]
-margin_left = 188.0
-margin_top = 200.0
-margin_right = 318.0
-margin_bottom = 292.0
+margin_left = 447.0
+margin_top = 450.0
+margin_right = 577.0
+margin_bottom = 510.0
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2906,23 +2905,10 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Boton Salir" type="Button" parent="POP UPs/PopupPanel/TituloPerder/Container"]
-margin_top = 64.0
-margin_right = 130.0
-margin_bottom = 92.0
-focus_mode = 0
-custom_fonts/font = ExtResource( 13 )
-text = "QUIT"
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Pausa" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
-margin_left = 168.5
-margin_top = 140.0
-margin_right = 855.5
-margin_bottom = 460.0
+margin_right = 1024.0
+margin_bottom = 600.0
 custom_fonts/font = ExtResource( 14 )
 text = "Pause
 Press Scape to continue."
@@ -2933,10 +2919,10 @@ __meta__ = {
 }
 
 [node name="Boton Menu" type="Button" parent="POP UPs/PopupPanel/Pausa"]
-margin_left = 283.5
-margin_top = 300.0
-margin_right = 413.5
-margin_bottom = 328.0
+margin_left = 447.0
+margin_top = 450.0
+margin_right = 577.0
+margin_bottom = 478.0
 custom_fonts/font = ExtResource( 13 )
 text = "MENU"
 __meta__ = {
@@ -2945,39 +2931,60 @@ __meta__ = {
 
 [node name="Primer Tutorial" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
-margin_right = 1027.0
-margin_bottom = 598.0
+margin_top = 110.0
+margin_right = 1024.0
+margin_bottom = 600.0
 custom_fonts/font = ExtResource( 14 )
-text = "Press the \"Space Bar\" to Jump."
+text = "This is Player 1, you can use it by pressing number \"1\"
+It has a low jump.
+
+Press the \"Space Bar\" to Jump."
 align = 1
-valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Segundo Tutorial" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
-margin_right = 1026.0
-margin_bottom = 599.0
+margin_top = 110.0
+margin_right = 1025.0
+margin_bottom = 600.0
 custom_fonts/font = ExtResource( 14 )
 text = "Coins give you more points."
 align = 1
-valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tercer Tutorial" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
-margin_right = 1020.0
-margin_bottom = 596.0
+margin_right = 1025.0
+margin_bottom = 600.0
 custom_fonts/font = ExtResource( 14 )
-text = "Press the Arrow \"2\" to change the player."
+text = "
+Press number \"2\" to use Player 2.
+It has a very higth jump.
+
+Press the \"Space Bar\" to Jump."
 align = 1
-valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cuarto Tutorial" type="Label" parent="POP UPs/PopupPanel"]
 visible = false
-margin_right = 1028.0
-margin_bottom = 601.0
+margin_right = 1025.0
+margin_bottom = 600.0
 custom_fonts/font = ExtResource( 14 )
-text = "Press the Arrow \"3\" to change the player."
+text = "
+Press number \"3\" to use Player 3.
+It is faster than the other and It has a low jump.
+
+Press the \"Space Bar\" to Jump."
 align = 1
-valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Blur" type="WorldEnvironment" parent="."]
 environment = SubResource( 272 )
@@ -3008,5 +3015,4 @@ environment = SubResource( 272 )
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloGanar/Boton Siguiente" to="." method="_on_Boton_Siguiente_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Reiniciar" to="." method="_on_Boton_Reiniciar_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Menu" to="." method="_on_Boton_Menu_pressed"]
-[connection signal="pressed" from="POP UPs/PopupPanel/TituloPerder/Container/Boton Salir" to="." method="_on_Boton_Salir_pressed"]
 [connection signal="pressed" from="POP UPs/PopupPanel/Pausa/Boton Menu" to="." method="_on_Boton_Menu_pressed"]

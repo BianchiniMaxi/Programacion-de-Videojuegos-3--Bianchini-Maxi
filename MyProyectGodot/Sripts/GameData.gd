@@ -4,6 +4,7 @@ var nivel
 var puntos
 var mayorpuntaje
 var datos_partida
+var tutorialrealizado
 
 func _ready():
 	datos_partida  = {
@@ -46,7 +47,7 @@ func cargar_partida():
 	
 	cargar.close()
 	
-	
+
 func compararPuntajes(nuevoPuntaje):
 	if nuevoPuntaje > mayorpuntaje:
 		mayorpuntaje = nuevoPuntaje

@@ -21,6 +21,7 @@ func _on_Boton_Comenzar_pressed():
 	Puntos.puntos = 0
 	GameData.puntos = 0
 	GameData.nivel = "res://Scenes/Nivel 1.tscn"
+	GameData.tutorialrealizado = false
 	GameData.guardar_partida()
 	
 	get_tree().change_scene("res://Scenes/Nivel 1.tscn")
