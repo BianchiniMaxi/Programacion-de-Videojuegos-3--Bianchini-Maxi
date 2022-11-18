@@ -2466,7 +2466,7 @@ __meta__ = {
 }
 
 [node name="Quinto Tutorial" type="Area2D" parent="Mapa"]
-position = Vector2( 4127, -428 )
+position = Vector2( 4102, -428 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/Quinto Tutorial"]
 shape = SubResource( 273 )
