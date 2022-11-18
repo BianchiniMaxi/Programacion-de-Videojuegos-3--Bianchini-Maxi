@@ -10,8 +10,7 @@ export (StreamTexture) var textura3
 
 var frenado_por_tutorial
 var tiempo_tutorial
-var personajeSkin
-var tutorialactivo
+var tutorial_activo
 var menu_activo
 var velocidad
 var muerto
@@ -23,13 +22,37 @@ func _ready():
 	gravedad = 2200
 	
 	frenado_por_tutorial = false
-	velocidad = Vector2()
-	tiempo_tutorial = 0
-	personajeSkin = 1
+	tutorial_activo = false
 	menu_activo = false
 	muerto = false
 	salto = false
-	tutorialactivo = false
+	
+	velocidad = Vector2()
+	
+	tiempo_tutorial = 0
+	
+
+func _physics_process(_delta):
+	if menu_activo != true:
+		
+		get_input()
+		
+		if salto && velocidad.y >= 0:
+			gravedad = 4000
+			salto = false
+	
+		if muerto == true:
+			get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
+			posicion_inicial()
+		
+		velocidad.x = velocidad_correr
+		velocidad.y += gravedad * _delta
+		velocidad = move_and_slide(velocidad, Vector2(0, -1))
+	else:
+		if tutorial_activo:
+			tiempo_tutorial += _delta
+			if tiempo_tutorial >= 6:
+				activar_jugador()
 	
 
 func posicion_inicial():
@@ -40,12 +63,11 @@ func posicion_inicial():
 	
 
 func get_input():
-	velocidad.x = velocidad_correr
 	
 	if Input.is_action_pressed("ui_jump"):
 		if is_on_floor():
-			gravedad = 2200
 			velocidad.y += fuerza_salto
+			gravedad = 2200
 			salto = true
 	
 	if Input.is_action_pressed("ui_number_1"): 
@@ -64,38 +86,16 @@ func get_input():
 		fuerza_salto = -850
 	
 
-func _physics_process(_delta):
-	if menu_activo != true:
-		
-		get_input()
-		
-		if salto && velocidad.y >= 0:
-			gravedad = 4000
-			salto = false
-	
-		if muerto == true:
-			get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
-			posicion_inicial()
-		
-		velocidad.y += gravedad * _delta
-		velocidad = move_and_slide(velocidad, Vector2(0, -1))
-	else:
-		if tutorialactivo:
-			tiempo_tutorial += _delta
-			if tiempo_tutorial >= 6:
-				activarJugador()
-	
-	
-func activarJugador():
+func activar_jugador():
 	tiempo_tutorial = 0
-	pararJugador(false,false)
-	tutorialactivo = false
+	parar_pugador(false,false)
+	tutorial_activo = false
 	get_parent().ocultar_tutorial()
 	
 
-func pararJugador(menu,tutorial):
+func parar_pugador(menu,tutorial):
 	menu_activo = menu
-	tutorialactivo = tutorial
+	tutorial_activo = tutorial
 	
 
 func _on_Collision_Cuerpo_body_entered(body):

@@ -33,9 +33,6 @@ func _ready():
 	crear_vidas()
 	
 
-func agarrar_moneda():
-	monedas += 1
-	
 func getInput():
 	if Input.is_action_just_pressed("ui_pause"):
 		if !menu_activo:
@@ -43,40 +40,34 @@ func getInput():
 			$"POP UPs"/PopupPanel.get_child(2).visible = true
 			$"Blur".environment.dof_blur_near_enabled = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			$Jugador.pararJugador(true,false)
+			$Jugador.parar_jugador(true,false)
 			menu_activo = true
 		else:
 			if $"POP UPs"/PopupPanel.get_child(2).visible:
 				$"POP UPs"/PopupPanel.get_child(2).visible = false
 				$"Blur".environment.dof_blur_near_enabled = false
 				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-				$Jugador.pararJugador(false,false)
+				$Jugador.parar_jugador(false,false)
 				menu_activo = false
 	
 	if Input.is_action_just_pressed("ui_jump") && $"POP UPs"/PopupPanel.get_child(1).visible:
 			get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 			get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
-			get_tree().change_scene(nivel_actual)
 			$"Blur".environment.dof_blur_near_enabled = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			get_tree().change_scene(nivel_actual)
 	else:
 		if Input.is_action_just_pressed("ui_jump") && $"POP UPs"/PopupPanel.get_child(0).visible:
 				get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 				get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
-				get_tree().change_scene(siguiente_nivel)
 				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+				get_tree().change_scene(siguiente_nivel)
 			
 		
 	
 
-func _physics_process(_delta):
-	
-	getInput()
-	
-	if vidas == 0 && !menu_activo:
-		menuMuerte()
-		
-	
+func agarrar_moneda():
+	monedas += 1
 
 func menuMuerte():
 	$"POP UPs"/PopupPanel.popup()
@@ -89,7 +80,7 @@ func menuMuerte():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$Jugador.pararJugador(true,false)
+	$Jugador.parar_jugador(true,false)
 	
 
 func _on_Bandera_Final_body_entered(body):
@@ -104,22 +95,22 @@ func _on_Bandera_Final_body_entered(body):
 		get_tree().get_nodes_in_group("SFX")[0].get_node("WinLevel").play()
 		get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
 		
-		Puntos.puntos += 150 + ((30 * monedas) + (30 * vidas) ) #VER SI CAMBIO Y LO DIVIDO POR LAS VIDAS PERDIODAS
-		Puntos.actualizar_puntos()
-		#PONER LA PARTE DE GUARDAR EN UNA FUNCION Y LOS DEMAS SCRIPTS NO DEBERIAN ALTERAR LOS VALORES DE GAMEDATA; SINO USAR UNA FUNCION
+		
+		GameData.puntos += 150 + ((30 * monedas) + (30 * vidas) )
+		GameData.actualizar_puntos()
+		
 		if siguiente_nivel != "Scenes/Menu.tscn":
-			GameData.puntos = Puntos.puntos
 			GameData.nivel = siguiente_nivel
 		else:
 			GameData.puntos = 0
 			GameData.nivel = "res://Scenes/Nivel 1.tscn"
-			GameData.tutorialrealizado = false
+			GameData.tutorial_realizado = false
 			
-		GameData.compararPuntajes(Puntos.puntos)
+		GameData.comparar_puntajes()
 		GameData.guardar_partida()
 		
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$Jugador.pararJugador(true,false)
+		$Jugador.parar_jugador(true,false)
 		
 	
 
@@ -149,18 +140,17 @@ func perder_vidas():
 func _on_Boton_Siguiente_pressed():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
-	get_tree().change_scene(siguiente_nivel)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	
+	get_tree().change_scene(siguiente_nivel)
 	
 
 # Menu si PIERDE
 func _on_Boton_Reiniciar_pressed():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
-	get_tree().change_scene(nivel_actual)
 	$"Blur".environment.dof_blur_near_enabled = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	get_tree().change_scene(nivel_actual)
 	
 
 func _on_Boton_Menu_pressed():
@@ -170,16 +160,16 @@ func _on_Boton_Menu_pressed():
 	
 
 func _on_Tutorial_body_entered(body):
-	if body.is_in_group("Jugador") && !arreglo_de_instrucciones[contador_instrucciones] && !GameData.tutorialrealizado:
+	if body.is_in_group("Jugador") && !arreglo_de_instrucciones[contador_instrucciones] && !GameData.tutorial_realizado:
 		$"POP UPs"/PopupPanel.popup()
 		$"POP UPs"/PopupPanel.get_child(contador_instrucciones + 3).visible = true
 		arreglo_de_instrucciones[contador_instrucciones] = true
-		$Jugador.pararJugador(true,true)
+		$Jugador.parar_jugador(true,true)
 		menu_activo = true
 		
 	contador_instrucciones += 1
 	if contador_instrucciones >= 5:
-		GameData.tutorialrealizado = true
+		GameData.tutorial_realizado = true
 	
 
 func ocultar_tutorial():

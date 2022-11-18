@@ -10,21 +10,19 @@ func _ready():
 	else:
 		$Titulo.get_child(1).visible = true
 	
-	print(GameData.mayorpuntaje)
-	$Titulo.get_child(2).get_child(0).text = String(GameData.mayorpuntaje)
+	$Titulo.get_child(2).get_child(0).text = String(GameData.mayor_puntaje)
 	
 
 func _on_Boton_Comenzar_pressed():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	
-	Puntos.puntos = 0
 	GameData.puntos = 0
 	GameData.nivel = "res://Scenes/Nivel 1.tscn"
-	GameData.tutorialrealizado = false
+	GameData.tutorial_realizado = false
 	GameData.guardar_partida()
 	
-	get_tree().change_scene("res://Scenes/Nivel 1.tscn")
+	get_tree().change_scene(GameData.nivel)
 	
 
 func _on_Boton_Creditos_pressed():
@@ -43,9 +41,8 @@ func _on_Boton_Menu_pressed():
 	$Creditos.visible = false
 	
 
-
 func _on_Boton_Continuar_Partida_pressed():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
 	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	get_tree().change_scene(GameData.nivel)
-	Puntos.puntos = GameData.puntos
+	
