@@ -21,7 +21,7 @@ func _ready():
 	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
-	arreglo_de_instrucciones =  [false,false,false,false]
+	arreglo_de_instrucciones =  [false,false,false,false,false]
 	contador_instrucciones = 0
 	diferencia_corazones = 80
 	diferencia_monedas = 50
@@ -178,7 +178,7 @@ func _on_Tutorial_body_entered(body):
 		menu_activo = true
 		
 	contador_instrucciones += 1
-	if contador_instrucciones >= 4:
+	if contador_instrucciones >= 5:
 		GameData.tutorialrealizado = true
 	
 
@@ -187,5 +187,6 @@ func ocultar_tutorial():
 	$"POP UPs"/PopupPanel.get_child(4).visible = false
 	$"POP UPs"/PopupPanel.get_child(5).visible = false
 	$"POP UPs"/PopupPanel.get_child(6).visible = false
+	$"POP UPs"/PopupPanel.get_child(7).visible = false
 	menu_activo = false
 	
