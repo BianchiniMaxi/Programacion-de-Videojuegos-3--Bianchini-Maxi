@@ -40,7 +40,7 @@ func _physics_process(_delta):
 	
 	get_input()
 	
-	if vidas == 0 && !menu_activo:
+	if vidas <= 0 && !menu_activo:
 		menu_muerte()
 		
 
@@ -205,4 +205,18 @@ func ocultar_tutorial():
 	$"POP UPs"/PopupPanel.get_child(6).visible = false
 	$"POP UPs"/PopupPanel.get_child(7).visible = false
 	menu_activo = false
+	
+
+
+func _on_Moneda_agarrar_moneda():
+		agarrar_moneda() #AUMENTA EN CONTADOR DE MONEDAS
+		crear_monedas() #AGREGA UNA MONEDA A UI
+	
+
+func _on_Jugador_perder_vidas():
+	perder_vidas()
+	
+
+func _on_Jugador_ocultar_tutorial():
+	ocultar_tutorial()
 	

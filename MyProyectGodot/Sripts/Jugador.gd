@@ -13,10 +13,13 @@ export (StreamTexture) var textura3
 var frenado_por_tutorial
 var tiempo_tutorial
 var tutorial_activo
+var permitir_muerte
 var menu_activo
 var velocidad
-var muerto
 var salto
+
+signal perder_vidas
+signal ocultar_tutorial
 
 #INICIALIZAMOS LAS VARIABLES
 func _ready():
@@ -27,12 +30,15 @@ func _ready():
 	frenado_por_tutorial = false
 	tutorial_activo = false
 	menu_activo = false
-	muerto = false
 	salto = false
 	
 	velocidad = Vector2()
 	
 	tiempo_tutorial = 0
+	permitir_muerte = 0
+	
+	#$Jugador/Particles2D.position.x = 17
+	#$Jugador/Particles2D.scale = Vector2(1,1)
 	
 
 func _physics_process(_delta):
@@ -40,15 +46,14 @@ func _physics_process(_delta):
 		
 		get_input()
 		
+		permitir_muerte += _delta
+		#if is_on_floor():
+			#$Jugador/Particles2D.emitting = true
+		
 		#APLICAMOS MAS GRAVEDAD CUANDO EL PRESONAJE ESTA CAYENDO
 		if salto && velocidad.y >= 0:
 			gravedad = 4000
 			salto = false
-	
-		#SI MUERE REPROUCIMOS EL SONIDO Y LO LLEVAMOS AL INICIO DEL MAPA
-		if muerto == true:
-			get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
-			posicion_inicial()
 		
 		#APLICAMOS LAS FISICAS
 		velocidad.x = velocidad_correr
@@ -64,10 +69,10 @@ func _physics_process(_delta):
 
 #LO LLEVA AL INICIO DEL MAPA Y LE RESTA LA VIDA PERDIDA
 func posicion_inicial():
-	muerto = false
-	position.x = 200
-	position.y = -100
-	get_parent().perder_vidas()
+		position.x = 200
+		position.y = -100
+		permitir_muerte = 0
+		emit_signal("perder_vidas")
 	
 
 #INPUTS DEL JUGADOR
@@ -78,6 +83,7 @@ func get_input():
 			velocidad.y += fuerza_salto
 			gravedad = 2200
 			salto = true
+			$Jugador/Particles2D.emitting = false
 	
 	if Input.is_action_pressed("ui_number_1"): 
 		$Sprite.texture = textura1
@@ -100,7 +106,7 @@ func activar_jugador():
 	tiempo_tutorial = 0
 	parar_jugador(false,false)
 	tutorial_activo = false
-	get_parent().ocultar_tutorial()
+	emit_signal("ocultar_tutorial") 
 	
 
 #DETENEMOS AL JUGADOR YA SEA QUE PUSO PAUSA O ENTRO EN ALGUNO DE LOS MENUS
@@ -111,6 +117,12 @@ func parar_jugador(menu,tutorial):
 
 #SI COLISIONA CON EL MAPA LE DECIMOS QUE MUERA
 func _on_Collision_Cuerpo_body_entered(body):
-	if body.is_in_group("Mapa") && muerto == false: 
-		muerto = true
+	if body.is_in_group("Mapa"): 
+		morir()
 	
+
+func morir():
+	#SI MUERE REPROUCIMOS EL SONIDO Y LO LLEVAMOS AL INICIO DEL MAPA
+	if permitir_muerte > 1:
+		get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
+		posicion_inicial()

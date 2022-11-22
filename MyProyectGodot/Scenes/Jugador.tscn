@@ -1,15 +1,25 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=2]
 [ext_resource path="res://Image/Player/Player.png" type="Texture" id=3]
 [ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=4]
+[ext_resource path="res://Image/Player/particle.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 136.667, 140 )
 
 [sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 42, 42 )
+
+[sub_resource type="ParticlesMaterial" id=55]
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+gravity = Vector3( -75, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.909804, 0.615686, 0.615686, 1 )
 
 [node name="Jugador" type="KinematicBody2D" groups=["Jugador"]]
 position = Vector2( 350, -100 )
@@ -62,5 +72,11 @@ shape = SubResource( 54 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -42, 34 )
+visibility_rect = Rect2( 0, 0, 0, 0 )
+process_material = SubResource( 55 )
+texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="Collision Cuerpo" to="." method="_on_Collision_Cuerpo_body_entered"]
