@@ -37,18 +37,17 @@ func _ready():
 	tiempo_tutorial = 0
 	permitir_muerte = 0
 	
-	#$Jugador/Particles2D.position.x = 17
-	#$Jugador/Particles2D.scale = Vector2(1,1)
-	
 
 func _physics_process(_delta):
 	if menu_activo != true:
 		
 		get_input()
 		
+		if !salto && is_on_floor() && !$Particles2D.visible:
+			$Particles2D.visible = true
+			$Particles2D.restart()
+		
 		permitir_muerte += _delta
-		#if is_on_floor():
-			#$Jugador/Particles2D.emitting = true
 		
 		#APLICAMOS MAS GRAVEDAD CUANDO EL PRESONAJE ESTA CAYENDO
 		if salto && velocidad.y >= 0:
@@ -56,7 +55,7 @@ func _physics_process(_delta):
 			salto = false
 		
 		#APLICAMOS LAS FISICAS
-		velocidad.x = velocidad_correr
+		#velocidad.x = velocidad_correr
 		velocidad.y += gravedad * _delta
 		velocidad = move_and_slide(velocidad, Vector2(0, -1))
 	else:
@@ -78,12 +77,12 @@ func posicion_inicial():
 #INPUTS DEL JUGADOR
 func get_input():
 	
-	if Input.is_action_pressed("ui_jump"):
-		if is_on_floor():
+	if Input.is_action_pressed("ui_jump") && is_on_floor():
 			velocidad.y += fuerza_salto
 			gravedad = 2200
 			salto = true
-			$Jugador/Particles2D.emitting = false
+			$Particles2D.visible = false
+			$Particles2D.emitting = false
 	
 	if Input.is_action_pressed("ui_number_1"): 
 		$Sprite.texture = textura1

@@ -1,10 +1,21 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=2]
 [ext_resource path="res://Image/Player/Player.png" type="Texture" id=3]
 [ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=4]
 [ext_resource path="res://Image/Player/particle.png" type="Texture" id=5]
+
+[sub_resource type="Shader" id=56]
+code = "shader_type canvas_item;
+
+void fragment(){
+	
+}
+"
+
+[sub_resource type="ShaderMaterial" id=57]
+shader = SubResource( 56 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 136.667, 140 )
@@ -14,14 +25,15 @@ extents = Vector2( 42, 42 )
 
 [sub_resource type="ParticlesMaterial" id=55]
 emission_shape = 1
-emission_sphere_radius = 5.0
+emission_sphere_radius = 1.0
 flag_disable_z = true
-gravity = Vector3( -75, 0, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = -80.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color = Color( 0.909804, 0.615686, 0.615686, 1 )
 
 [node name="Jugador" type="KinematicBody2D" groups=["Jugador"]]
+material = SubResource( 57 )
 position = Vector2( 350, -100 )
 script = ExtResource( 1 )
 textura1 = ExtResource( 3 )
@@ -74,8 +86,9 @@ __meta__ = {
 }
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( -42, 34 )
-visibility_rect = Rect2( 0, 0, 0, 0 )
+position = Vector2( -43, 38 )
+rotation = 0.47473
+amount = 45
 process_material = SubResource( 55 )
 texture = ExtResource( 5 )
 
