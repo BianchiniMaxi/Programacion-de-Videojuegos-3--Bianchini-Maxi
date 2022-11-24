@@ -43,9 +43,9 @@ func _physics_process(_delta):
 		
 		get_input()
 		
-		if !salto && is_on_floor() && !$Particles2D.visible:
-			$Particles2D.visible = true
-			$Particles2D.restart()
+		#if !salto && is_on_floor() && !$Particles2D.visible:
+		#	$Particles2D.visible = true
+		#	$Particles2D.restart()
 		
 		permitir_muerte += _delta
 		
@@ -55,7 +55,7 @@ func _physics_process(_delta):
 			salto = false
 		
 		#APLICAMOS LAS FISICAS
-		#velocidad.x = velocidad_correr
+		velocidad.x = velocidad_correr
 		velocidad.y += gravedad * _delta
 		velocidad = move_and_slide(velocidad, Vector2(0, -1))
 	else:
@@ -81,23 +81,26 @@ func get_input():
 			velocidad.y += fuerza_salto
 			gravedad = 2200
 			salto = true
-			$Particles2D.visible = false
-			$Particles2D.emitting = false
+			#$Particles2D.visible = false
+			#$ .emitting = false
 	
 	if Input.is_action_pressed("ui_number_1"): 
 		$Sprite.texture = textura1
 		velocidad_correr = 600
 		fuerza_salto = -850
+		$Particles2D2.texture = textura1
 		
 	if Input.is_action_pressed("ui_number_2"):
 		$Sprite.texture = textura2
 		velocidad_correr = 600
 		fuerza_salto = -1400
+		$Particles2D2.texture = textura2
 		
 	if Input.is_action_pressed("ui_number_3"): 
 		$Sprite.texture = textura3
 		velocidad_correr = 800
 		fuerza_salto = -850
+		$Particles2D2.texture = textura3
 	
 
 #PERMITIMOS EL MOVIMIENTO DEL PERSONAJE Y OCULTAMOS EL TEXTO DEL TUTORIAL
