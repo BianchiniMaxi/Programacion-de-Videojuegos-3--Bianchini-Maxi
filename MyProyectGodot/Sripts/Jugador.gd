@@ -88,19 +88,19 @@ func get_input():
 		$Sprite.texture = textura1
 		velocidad_correr = 600
 		fuerza_salto = -850
-		$Particles2D2.texture = textura1
+		$Ghost.texture = textura1
 		
 	if Input.is_action_pressed("ui_number_2"):
 		$Sprite.texture = textura2
 		velocidad_correr = 600
 		fuerza_salto = -1400
-		$Particles2D2.texture = textura2
+		$Ghost.texture = textura2
 		
 	if Input.is_action_pressed("ui_number_3"): 
 		$Sprite.texture = textura3
 		velocidad_correr = 800
 		fuerza_salto = -850
-		$Particles2D2.texture = textura3
+		$Ghost.texture = textura3
 	
 
 #PERMITIMOS EL MOVIMIENTO DEL PERSONAJE Y OCULTAMOS EL TEXTO DEL TUTORIAL
