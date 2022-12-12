@@ -9,6 +9,10 @@ export (StreamTexture) var textura1
 export (StreamTexture) var textura2
 export (StreamTexture) var textura3
 
+export (StreamTexture) var textura1ghost
+export (StreamTexture) var textura2ghost
+export (StreamTexture) var textura3ghost
+
 #VARIABLES VARIAS
 var frenado_por_tutorial
 var tiempo_tutorial
@@ -88,19 +92,19 @@ func get_input():
 		$Sprite.texture = textura1
 		velocidad_correr = 600
 		fuerza_salto = -850
-		$Ghost.texture = textura1
+		$Ghost.texture = textura1ghost
 		
 	if Input.is_action_pressed("ui_number_2"):
 		$Sprite.texture = textura2
 		velocidad_correr = 600
 		fuerza_salto = -1400
-		$Ghost.texture = textura2
+		$Ghost.texture = textura2ghost
 		
 	if Input.is_action_pressed("ui_number_3"): 
 		$Sprite.texture = textura3
 		velocidad_correr = 800
 		fuerza_salto = -850
-		$Ghost.texture = textura3
+		$Ghost.texture = textura3ghost
 	
 
 #PERMITIMOS EL MOVIMIENTO DEL PERSONAJE Y OCULTAMOS EL TEXTO DEL TUTORIAL

@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=127 format=2]
 
 [ext_resource path="res://Sripts/Pinches.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Corazones.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Sounds_Music/SFX/Botones.ogg" type="AudioStream" id=16]
 [ext_resource path="res://Sounds_Music/Music/Gameplay.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Sounds_Music/Music/Menu.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Image/Level/particle.png" type="Texture" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=172]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -2394,6 +2395,15 @@ extents = Vector2( 56, 58 )
 [sub_resource type="Environment" id=272]
 background_mode = 4
 
+[sub_resource type="ParticlesMaterial" id=274]
+emission_shape = 2
+emission_box_extents = Vector3( 7000, 65, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0.004 )
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
 [node name="Nivel 1" type="Node2D"]
 script = ExtResource( 4 )
 siguiente_nivel = "Scenes/Nivel 2.tscn"
@@ -3018,6 +3028,14 @@ __meta__ = {
 
 [node name="Blur" type="WorldEnvironment" parent="."]
 environment = SubResource( 272 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 6934, -834 )
+amount = 250
+lifetime = 2.0
+visibility_rect = Rect2( -7000, -100, 14000, 200 )
+process_material = SubResource( 274 )
+texture = ExtResource( 19 )
 
 [connection signal="body_entered" from="Mapa/Primer Tutorial" to="." method="_on_Tutorial_body_entered"]
 [connection signal="body_entered" from="Mapa/Segundo Tutorial" to="." method="_on_Tutorial_body_entered"]

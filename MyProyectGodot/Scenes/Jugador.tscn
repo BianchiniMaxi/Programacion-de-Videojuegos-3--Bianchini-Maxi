@@ -1,15 +1,26 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Sripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=2]
 [ext_resource path="res://Image/Player/Player.png" type="Texture" id=3]
 [ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=4]
+[ext_resource path="res://Image/Player/Player_blanco.png" type="Texture" id=5]
+[ext_resource path="res://Image/Player/Player 2 Ghost.png" type="Texture" id=6]
+[ext_resource path="res://Image/Player/Player Ghost.png" type="Texture" id=7]
+[ext_resource path="res://Image/Player/Player 3 Ghost.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 136.667, 140 )
 
 [sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 42, 42 )
+
+[sub_resource type="Gradient" id=59]
+offsets = PoolRealArray( 0.020979, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.521569 )
+
+[sub_resource type="GradientTexture" id=60]
+gradient = SubResource( 59 )
 
 [sub_resource type="ParticlesMaterial" id=58]
 flag_disable_z = true
@@ -18,7 +29,7 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.3
-color = Color( 0.152941, 0.0509804, 0.0509804, 1 )
+color_ramp = SubResource( 60 )
 
 [node name="Jugador" type="KinematicBody2D" groups=["Jugador"]]
 position = Vector2( 350, -100 )
@@ -26,6 +37,9 @@ script = ExtResource( 1 )
 textura1 = ExtResource( 3 )
 textura2 = ExtResource( 2 )
 textura3 = ExtResource( 4 )
+textura1ghost = ExtResource( 7 )
+textura2ghost = ExtResource( 6 )
+textura3ghost = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.3, 0.3 )
@@ -78,6 +92,6 @@ amount = 4
 lifetime = 0.3
 local_coords = false
 process_material = SubResource( 58 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="Collision Cuerpo" to="." method="_on_Collision_Cuerpo_body_entered"]
