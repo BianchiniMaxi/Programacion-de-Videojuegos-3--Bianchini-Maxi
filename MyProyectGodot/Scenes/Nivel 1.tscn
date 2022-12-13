@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Sripts/Pinches.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Corazones.tscn" type="PackedScene" id=2]
@@ -18,7 +18,7 @@
 [ext_resource path="res://Sounds_Music/SFX/Botones.ogg" type="AudioStream" id=16]
 [ext_resource path="res://Sounds_Music/Music/Gameplay.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Sounds_Music/Music/Menu.ogg" type="AudioStream" id=18]
-[ext_resource path="res://Image/Level/particle.png" type="Texture" id=19]
+[ext_resource path="res://Image/Level/Particula de Luz.png" type="Texture" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=172]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -2395,6 +2395,57 @@ extents = Vector2( 56, 58 )
 [sub_resource type="Environment" id=272]
 background_mode = 4
 
+[sub_resource type="Shader" id=275]
+code = "shader_type particles;
+
+uniform int trail_divisor = 2;
+uniform float scale = 5;
+
+float rand_from_seed(inout uint seed){
+    int k;
+    int s = int(seed);
+    if(s == 0){
+        s = 305420679;
+        k = s / 127773;
+        s = 16087 * (s - k * 127773) - 2836 * k;
+    }
+    if(s < 0){
+        s += 2147483647;
+        seed = uint(s);
+    }
+    return float(seed % uint(65536)) / 65535.0;
+}
+
+float rand_from_m1_p1(inout uint seed){
+    return rand_from_seed(seed) * 2.0 - 1.0;
+}
+
+uint hash(uint x){
+    x = ((x >> uint(16)) ^ x) * uint(73244475);
+    x = ((x >> uint(16)) ^ x) * uint(73244475);
+    x = (x >> uint(16)) ^ x;
+    return x;
+}
+
+void vertex(){
+	
+	TRANSFORM[0][0] = scale;
+	TRANSFORM[1][1] = scale;
+    uint base_number = NUMBER / uint(trail_divisor);
+    uint seed1 = hash(base_number + uint(1) + RANDOM_SEED);
+    uint seed2 = hash(base_number + uint(2) + RANDOM_SEED);
+    float rand1 = rand_from_m1_p1(seed1);
+    float rand2 = rand_from_m1_p1(seed2);
+    VELOCITY = vec3(100.0 * rand1, 100.0 * rand2, 0.0);
+    COLOR = vec4(fract(rand1), fract(rand2), sin(TIME), 1.0);
+
+}"
+
+[sub_resource type="ShaderMaterial" id=276]
+shader = SubResource( 275 )
+shader_param/trail_divisor = 2
+shader_param/scale = 5.0
+
 [sub_resource type="ParticlesMaterial" id=274]
 emission_shape = 2
 emission_box_extents = Vector3( 7000, 65, 1 )
@@ -3030,7 +3081,8 @@ __meta__ = {
 environment = SubResource( 272 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 6934, -834 )
+material = SubResource( 276 )
+position = Vector2( 7100, -834 )
 amount = 250
 lifetime = 2.0
 visibility_rect = Rect2( -7000, -100, 14000, 200 )

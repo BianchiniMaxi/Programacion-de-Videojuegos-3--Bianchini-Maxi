@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/particle.png-619972b0fd4a5938b0f71eb1233beff1.stex"
+path="res://.import/Particula de Luz.png-c833d1bcbe5d2177d2221f345707d0eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Level/particle.png"
-dest_files=[ "res://.import/particle.png-619972b0fd4a5938b0f71eb1233beff1.stex" ]
+source_file="res://Image/Level/Particula de Luz.png"
+dest_files=[ "res://.import/Particula de Luz.png-c833d1bcbe5d2177d2221f345707d0eb.stex" ]
 
 [params]
 
