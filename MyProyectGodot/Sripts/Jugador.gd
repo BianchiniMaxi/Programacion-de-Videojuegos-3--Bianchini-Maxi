@@ -130,5 +130,5 @@ func _on_Collision_Cuerpo_body_entered(body):
 func morir():
 	#SI MUERE REPROUCIMOS EL SONIDO Y LO LLEVAMOS AL INICIO DEL MAPA
 	if permitir_muerte > 1:
-		get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
+		#get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
 		posicion_inicial()

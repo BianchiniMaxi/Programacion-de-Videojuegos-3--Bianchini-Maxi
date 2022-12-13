@@ -20,7 +20,7 @@ var monedas
 #INICIALIZACION DE LAS VARIABLES
 func _ready():
 	
-	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").play()
+	#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN) #OCULTAMOS EL PUNTERO DEL MOUSE
 	
 	#INICIALIZACION DE VARIABLES
@@ -65,15 +65,15 @@ func get_input():
 	
 	#PERMITE VOVLER A JUGAR O PASAR AL SIGUIENTE NIVEL CON LA BARRA ESPACIADORA, SOLO AL ESTAR DENTRO DE LOS MENUS DE GANAR O PERDER
 	if Input.is_action_just_pressed("ui_jump") && $"POP UPs"/PopupPanel.get_child(1).visible:
-			get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-			get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+			#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+			#get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 			$"Blur".environment.dof_blur_near_enabled = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 			get_tree().change_scene(nivel_actual)
 	else:
 		if Input.is_action_just_pressed("ui_jump") && $"POP UPs"/PopupPanel.get_child(0).visible:
-				get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-				get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+				#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+				#get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 				get_tree().change_scene(siguiente_nivel)
 		
@@ -91,8 +91,8 @@ func menu_muerte():
 	$"Blur".environment.dof_blur_near_enabled = true #ACTIVA EL BLUR QUE SE USA EN LOS DISTINTOS MENUS DEL GAMEPLAY
 	menu_activo = true
 	
-	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
+	#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+	#get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Jugador.parar_jugador(true,false) #FRENA AL JUGADOR
@@ -107,9 +107,9 @@ func _on_Bandera_Final_body_entered(body):
 		$"Blur".environment.dof_blur_near_enabled = true
 		menu_activo = true
 		
-		get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-		get_tree().get_nodes_in_group("SFX")[0].get_node("WinLevel").play()
-		get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
+		#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+		#get_tree().get_nodes_in_group("SFX")[0].get_node("WinLevel").play()
+		#get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play()
 		
 		
 		GameData.puntos += 150 + ((30 * monedas) + (30 * vidas) ) #CALCULA LOS PUNTOS OBTENIDOS
@@ -159,16 +159,16 @@ func perder_vidas():
 
 #PASA AL SIGUIENTE NIVEL AL SER PRECIONADO
 func _on_Boton_Siguiente_pressed():
-	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+	#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+	#get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().change_scene(siguiente_nivel)
 	
 
 #REINICIA EL NIVEL AL SER PRECIONADO
 func _on_Boton_Reiniciar_pressed():
-	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+	#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+	#get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	$"Blur".environment.dof_blur_near_enabled = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().change_scene(nivel_actual)
@@ -176,8 +176,8 @@ func _on_Boton_Reiniciar_pressed():
 
 #PASA AL MENU DEL JUEGO AL SER PRECIONADO
 func _on_Boton_Menu_pressed():
-	get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
-	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+	#get_tree().get_nodes_in_group("Music")[0].get_node("Gameplay").stop()
+	#get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	get_tree().change_scene("res://Scenes/Menu.tscn")
 	
 

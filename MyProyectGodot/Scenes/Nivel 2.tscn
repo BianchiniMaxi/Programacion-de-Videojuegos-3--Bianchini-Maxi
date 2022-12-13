@@ -2385,9 +2385,9 @@ background_mode = 4
 
 [sub_resource type="ParticlesMaterial" id=159]
 emission_shape = 2
-emission_box_extents = Vector3( 0, 150, 0 )
+emission_box_extents = Vector3( 7100, 200, 0 )
 flag_disable_z = true
-gravity = Vector3( -75, 0, 0 )
+gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
@@ -2993,11 +2993,11 @@ __meta__ = {
 environment = SubResource( 158 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 14280, -186 )
+position = Vector2( 7100, -241 )
 z_index = -1
 amount = 1000
-lifetime = 20.0
-visibility_rect = Rect2( 0, -250, -14200, 500 )
+lifetime = 2.0
+visibility_rect = Rect2( 7100, -250, -14200, 500 )
 process_material = SubResource( 159 )
 texture = ExtResource( 19 )
 
