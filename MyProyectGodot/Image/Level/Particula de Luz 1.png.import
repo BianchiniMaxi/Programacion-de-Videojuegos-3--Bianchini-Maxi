@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Luz Amarilla.png-fc0853b63eac9ada1149926ffdf394c9.stex"
+path="res://.import/Particula de Luz 1.png-cff278c92f36ae474791cf1032d10a61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Level/Luz Amarilla.png"
-dest_files=[ "res://.import/Luz Amarilla.png-fc0853b63eac9ada1149926ffdf394c9.stex" ]
+source_file="res://Image/Level/Particula de Luz 1.png"
+dest_files=[ "res://.import/Particula de Luz 1.png-cff278c92f36ae474791cf1032d10a61.stex" ]
 
 [params]
 
