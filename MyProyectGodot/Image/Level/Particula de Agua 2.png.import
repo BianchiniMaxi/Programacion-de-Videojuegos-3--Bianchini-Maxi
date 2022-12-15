@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Particula Agua 2.png-4f73e732da3348153d2cac714933cff4.stex"
+path="res://.import/Particula de Agua 2.png-f2a3648528259804957780b3a9431ace.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Level/Particula Agua 2.png"
-dest_files=[ "res://.import/Particula Agua 2.png-4f73e732da3348153d2cac714933cff4.stex" ]
+source_file="res://Image/Level/Particula de Agua 2.png"
+dest_files=[ "res://.import/Particula de Agua 2.png-f2a3648528259804957780b3a9431ace.stex" ]
 
 [params]
 
