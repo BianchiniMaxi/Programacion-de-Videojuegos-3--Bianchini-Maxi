@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=2]
@@ -8,6 +8,17 @@
 [ext_resource path="res://Image/Player/Player 2 Ghost.png" type="Texture" id=6]
 [ext_resource path="res://Image/Player/Player Ghost.png" type="Texture" id=7]
 [ext_resource path="res://Image/Player/Player 3 Ghost.png" type="Texture" id=8]
+
+[sub_resource type="Shader" id=61]
+code = "shader_type canvas_item;
+
+void fragment(){
+	COLOR = vec4(abs(sin(TIME)),0.0,5.0,1.0);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=62]
+shader = SubResource( 61 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 136.667, 140 )
@@ -42,6 +53,7 @@ textura2ghost = ExtResource( 6 )
 textura3ghost = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 62 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 __meta__ = {
