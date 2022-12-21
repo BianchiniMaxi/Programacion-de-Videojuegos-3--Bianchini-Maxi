@@ -72,6 +72,7 @@ func _physics_process(_delta):
 
 #LO LLEVA AL INICIO DEL MAPA Y LE RESTA LA VIDA PERDIDA
 func posicion_inicial():
+		velocidad.y = 0
 		position.x = 200
 		position.y = -100
 		permitir_muerte = 0
