@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Agua.png-37c9ecebefef8431989a8a108d481542.stex"
+path="res://.import/wave2.png-3d3df9d7616c69c561a591ca3503f173.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Level/Agua.png"
-dest_files=[ "res://.import/Agua.png-37c9ecebefef8431989a8a108d481542.stex" ]
+source_file="res://Image/wave2.png"
+dest_files=[ "res://.import/wave2.png-3d3df9d7616c69c561a591ca3503f173.stex" ]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=1
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
-process/premult_alpha=false
+process/fix_alpha_border=false
+process/premult_alpha=true
 process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false
