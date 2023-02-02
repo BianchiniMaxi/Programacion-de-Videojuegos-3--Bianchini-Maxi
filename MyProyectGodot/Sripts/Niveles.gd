@@ -38,6 +38,9 @@ func _ready():
 
 func _physics_process(_delta):
 	
+
+	
+	
 	get_input()
 	
 	if vidas <= 0 && !menu_activo:

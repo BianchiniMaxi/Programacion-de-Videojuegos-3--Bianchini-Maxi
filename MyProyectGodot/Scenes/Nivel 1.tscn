@@ -2450,7 +2450,7 @@ shader_param/scale = 5.0
 
 [sub_resource type="ParticlesMaterial" id=274]
 emission_shape = 2
-emission_box_extents = Vector3( 7000, 65, 1 )
+emission_box_extents = Vector3( 7250, 65, 1 )
 flag_disable_z = true
 direction = Vector3( 0, 0, 0.004 )
 gravity = Vector3( 0, 0, 0 )
@@ -2460,7 +2460,7 @@ scale = 1.5
 
 [sub_resource type="ParticlesMaterial" id=277]
 emission_shape = 2
-emission_box_extents = Vector3( 7000, 65, 1 )
+emission_box_extents = Vector3( 7250, 65, 1 )
 flag_disable_z = true
 direction = Vector3( 0, 0, 0.004 )
 gravity = Vector3( 0, 0, 0 )
@@ -2469,7 +2469,7 @@ orbit_velocity_random = 0.0
 
 [sub_resource type="ParticlesMaterial" id=278]
 emission_shape = 2
-emission_box_extents = Vector3( 7000, 65, 1 )
+emission_box_extents = Vector3( 7250, 65, 1 )
 flag_disable_z = true
 direction = Vector3( 0, 0, 0.004 )
 gravity = Vector3( 0, 0, 0 )
@@ -3107,7 +3107,7 @@ material = SubResource( 276 )
 position = Vector2( 7100, -834 )
 amount = 250
 lifetime = 2.0
-visibility_rect = Rect2( -7000, -100, 14000, 200 )
+visibility_rect = Rect2( -7250, -100, 14500, 200 )
 process_material = SubResource( 274 )
 texture = ExtResource( 19 )
 
@@ -3116,7 +3116,7 @@ material = SubResource( 276 )
 position = Vector2( 7100, -834 )
 amount = 250
 lifetime = 2.0
-visibility_rect = Rect2( -7000, -100, 14000, 200 )
+visibility_rect = Rect2( -7250, -100, 14500, 200 )
 process_material = SubResource( 277 )
 texture = ExtResource( 20 )
 
@@ -3125,7 +3125,7 @@ material = SubResource( 276 )
 position = Vector2( 7100, -834 )
 amount = 250
 lifetime = 2.0
-visibility_rect = Rect2( -7000, -100, 14000, 200 )
+visibility_rect = Rect2( -7250, -100, 14500, 200 )
 process_material = SubResource( 278 )
 texture = ExtResource( 21 )
 
