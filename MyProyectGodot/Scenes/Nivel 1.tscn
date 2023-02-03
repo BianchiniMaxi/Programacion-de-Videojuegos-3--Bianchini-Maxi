@@ -2580,6 +2580,7 @@ stream = ExtResource( 17 )
 stream = ExtResource( 18 )
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
+position = Vector2( 13500, -100 )
 
 [node name="Bandera Final" type="Area2D" parent="."]
 position = Vector2( 14000, -63 )

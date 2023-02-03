@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fondo Nivel 2.png-73525f534ff164263d0b546be5b0a304.stex"
+path="res://.import/Fondo Level 2 Nuevo 3.png-e7e6c1f4d4c19653f4cb85f3104ec64a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Fondo Nivel 2.png"
-dest_files=[ "res://.import/Fondo Nivel 2.png-73525f534ff164263d0b546be5b0a304.stex" ]
+source_file="res://Image/Background/Fondo Level 2 Nuevo 3.png"
+dest_files=[ "res://.import/Fondo Level 2 Nuevo 3.png-e7e6c1f4d4c19653f4cb85f3104ec64a.stex" ]
 
 [params]
 
