@@ -4,7 +4,7 @@
 [ext_resource path="res://Image/Level/SpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Image/Icons/Moneda.png" type="Texture" id=3]
 [ext_resource path="res://Image/Icons/Bandera.png" type="Texture" id=4]
-[ext_resource path="res://Image/Background/Fondo Level 2 Nuevo.png" type="Texture" id=5]
+[ext_resource path="res://Image/Background/Fondo Nivel 2A.png" type="Texture" id=5]
 [ext_resource path="res://Sripts/Niveles.gd" type="Script" id=6]
 [ext_resource path="res://Sounds_Music/SFX/Botones.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Sounds_Music/SFX/Monedas.ogg" type="AudioStream" id=8]
@@ -18,10 +18,10 @@
 [ext_resource path="res://Sounds_Music/SFX/WinLevel.ogg" type="AudioStream" id=16]
 [ext_resource path="res://Sounds_Music/Music/Gameplay.ogg" type="AudioStream" id=17]
 [ext_resource path="res://Sounds_Music/Music/Menu.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Image/Background/Fondo Nivel 2B.png" type="Texture" id=19]
+[ext_resource path="res://Image/Background/Fondo Nivel 2C.png" type="Texture" id=20]
 [ext_resource path="res://Image/Level/Particula de Cascada.png" type="Texture" id=22]
-[ext_resource path="res://Sripts/FondoLV2.gd" type="Script" id=27]
-[ext_resource path="res://Image/Background/2.png" type="Texture" id=28]
-[ext_resource path="res://Image/Background/Fondo Level 2 Nuevo 2.png" type="Texture" id=29]
+[ext_resource path="res://Sripts/Fondo.gd" type="Script" id=27]
 
 [sub_resource type="ConvexPolygonShape2D" id=55]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -2453,14 +2453,14 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Mapa/ParallaxBackground/ParallaxLayer"]
 material = SubResource( 172 )
 position = Vector2( 386, -350 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
 script = ExtResource( 27 )
 __meta__ = {
 "_edit_lock_": true
 }
-textura1 = ExtResource( 29 )
-textura2 = ExtResource( 5 )
-textura3 = ExtResource( 28 )
+textura1 = ExtResource( 5 )
+textura2 = ExtResource( 19 )
+textura3 = ExtResource( 20 )
 
 [node name="Cascada" type="Particles2D" parent="Mapa/ParallaxBackground/ParallaxLayer"]
 position = Vector2( 342, -407 )
