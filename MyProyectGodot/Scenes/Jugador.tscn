@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Sripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=2]
@@ -8,6 +8,48 @@
 [ext_resource path="res://Image/Player/Player 2 Ghost.png" type="Texture" id=6]
 [ext_resource path="res://Image/Player/Player Ghost.png" type="Texture" id=7]
 [ext_resource path="res://Image/Player/Player 3 Ghost.png" type="Texture" id=8]
+
+[sub_resource type="Shader" id=62]
+code = "shader_type canvas_item;
+
+const float PI = 3.141516;
+
+uniform float speed = 1.0;
+
+uniform vec4 tint : hint_color = vec4(1.0, 1.0, 0.0, 1.0);
+
+uniform float span : hint_range(0.1, 1.0) = 0.3;
+uniform bool activar = false;
+
+float luminance(vec4 colour) {
+	return 1.0 - sqrt(0.299*colour.r*colour.r + 0.587*colour.g*colour.g + 0.114*colour.b*colour.b);
+}
+
+void fragment() {
+	vec4 color_original = texture(TEXTURE, UV);//GUARDA LA TEXTURA ORIGINAL
+	vec4 color_final = color_original;
+	float target = abs(sin(TIME * PI * speed) * (1.0 + span));
+	if(activar) {
+		if(color_final.a > 0.0 ) {
+			float lum = luminance(color_final);
+			float diff = abs(lum - target);
+			float mx = clamp(1. - diff / span, 0.0, 1.0);
+			color_final = mix(color_final, tint, mx);
+		}
+	} else {
+		color_final = color_original;
+	}
+	
+	COLOR = color_final;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=63]
+shader = SubResource( 62 )
+shader_param/speed = 1.0
+shader_param/tint = Color( 1, 1, 0, 1 )
+shader_param/span = 0.3
+shader_param/activar = false
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 136.667, 140 )
@@ -44,6 +86,7 @@ textura2ghost = ExtResource( 6 )
 textura3ghost = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 63 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 __meta__ = {

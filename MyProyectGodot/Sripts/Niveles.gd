@@ -210,7 +210,6 @@ func ocultar_tutorial():
 	menu_activo = false
 	
 
-
 func _on_Moneda_agarrar_moneda():
 		agarrar_moneda() #AUMENTA EN CONTADOR DE MONEDAS
 		crear_monedas() #AGREGA UNA MONEDA A UI

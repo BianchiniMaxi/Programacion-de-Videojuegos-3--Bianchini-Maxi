@@ -3147,7 +3147,7 @@ texture = ExtResource( 21 )
 [connection signal="body_entered" from="Pinches/Pinche7" to="Pinches/Pinche7" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche8" to="Pinches/Pinche8" method="_on_Pinche_body_entered"]
 [connection signal="body_entered" from="Pinches/Pinche9" to="Pinches/Pinche9" method="_on_Pinche_body_entered"]
-[connection signal="agarrar_moneda" from="Monedas/Moneda" to="." method="_on_Moneda_agarrar_moneda"]
+[connection signal="agarrar_moneda" from="Monedas/Moneda" to="Jugador" method="_on_Moneda_agarrar_moneda"]
 [connection signal="body_entered" from="Monedas/Moneda" to="Monedas/Moneda" method="_on_Moneda_body_entered"]
 [connection signal="agarrar_moneda" from="Monedas/Moneda2" to="." method="_on_Moneda_agarrar_moneda"]
 [connection signal="body_entered" from="Monedas/Moneda2" to="Monedas/Moneda2" method="_on_Moneda_body_entered"]

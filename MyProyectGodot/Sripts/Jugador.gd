@@ -18,6 +18,8 @@ var frenado_por_tutorial
 var tiempo_tutorial
 var tutorial_activo
 var permitir_muerte
+var activar_shader
+var tiempo_shader
 var menu_activo
 var velocidad
 var salto
@@ -33,6 +35,7 @@ func _ready():
 	
 	frenado_por_tutorial = false
 	tutorial_activo = false
+	activar_shader = false
 	menu_activo = false
 	salto = false
 	
@@ -40,7 +43,7 @@ func _ready():
 	
 	tiempo_tutorial = 0
 	permitir_muerte = 0
-	
+	tiempo_shader = 0
 
 func _physics_process(_delta):
 	if menu_activo != true:
@@ -68,6 +71,15 @@ func _physics_process(_delta):
 			tiempo_tutorial += _delta
 			if tiempo_tutorial >= 6:
 				activar_jugador()
+				
+	if(activar_shader):
+		tiempo_shader += _delta
+		if(tiempo_shader > 2):
+			activar_shader = false
+			get_node("Sprite").material.set_shader_param("activar", false)
+			tiempo_shader = 0
+			
+		
 	
 
 #LO LLEVA AL INICIO DEL MAPA Y LE RESTA LA VIDA PERDIDA
@@ -133,3 +145,9 @@ func morir():
 	if permitir_muerte > 1:
 		#get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
 		posicion_inicial()
+
+
+func _on_Moneda_agarrar_moneda():
+	get_node("Sprite").material.set_shader_param("activar", true)
+	
+	
