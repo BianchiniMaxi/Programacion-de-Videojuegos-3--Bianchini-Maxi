@@ -29,7 +29,7 @@ signal ocultar_tutorial
 
 #INICIALIZAMOS LAS VARIABLES
 func _ready():
-	velocidad_correr = 0 #600
+	velocidad_correr = 600
 	fuerza_salto = -850
 	gravedad = 2200
 	

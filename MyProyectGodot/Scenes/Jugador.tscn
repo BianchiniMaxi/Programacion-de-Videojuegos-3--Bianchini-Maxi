@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://Image/Player/Player 2.png" type="Texture" id=2]
 [ext_resource path="res://Image/Player/Player.png" type="Texture" id=3]
 [ext_resource path="res://Image/Player/Player 3.png" type="Texture" id=4]
-[ext_resource path="res://Image/Player/Player_blanco.png" type="Texture" id=5]
 [ext_resource path="res://Image/Player/Player 2 Ghost.png" type="Texture" id=6]
 [ext_resource path="res://Image/Player/Player Ghost.png" type="Texture" id=7]
 [ext_resource path="res://Image/Player/Player 3 Ghost.png" type="Texture" id=8]
@@ -135,6 +134,5 @@ amount = 4
 lifetime = 0.3
 local_coords = false
 process_material = SubResource( 58 )
-texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="Collision Cuerpo" to="." method="_on_Collision_Cuerpo_body_entered"]
