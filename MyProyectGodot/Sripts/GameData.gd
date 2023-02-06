@@ -41,7 +41,7 @@ func cargar_partida():
 		nivel = "res://Scenes/Nivel 1.tscn"
 		return
 	
-	cargar.open("user://RunAndJump_autosave.sav", File.READ) #ABRIMOS EL ARCHIVO EN MODO LESCTURA
+	cargar.open("user://RunAndJump_autosave.sav", File.READ) #ABRIMOS EL ARCHIVO EN MODO LECTURA
 	var datos_cargar = datos_partida #VARIABLE DE TIPO FILE
 
 	while !cargar.eof_reached():#CARGAMOS LOS DATOS SI NO LLEGA AL FINAL DEL ARCHIVO

@@ -50,10 +50,6 @@ func _physics_process(_delta):
 		
 		get_input()
 		
-		#if !salto && is_on_floor() && !$Particles2D.visible:
-		#	$Particles2D.visible = true
-		#	$Particles2D.restart()
-		
 		permitir_muerte += _delta
 		
 		#APLICAMOS MAS GRAVEDAD CUANDO EL PRESONAJE ESTA CAYENDO
@@ -74,7 +70,7 @@ func _physics_process(_delta):
 				
 	if(activar_shader):
 		tiempo_shader += _delta
-		if(tiempo_shader > 2):
+		if(tiempo_shader > 1.5):
 			activar_shader = false
 			get_node("Sprite").material.set_shader_param("activar", false)
 			tiempo_shader = 0
@@ -98,8 +94,6 @@ func get_input():
 			velocidad.y += fuerza_salto
 			gravedad = 2200
 			salto = true
-			#$Particles2D.visible = false
-			#$ .emitting = false
 	
 	if Input.is_action_pressed("ui_number_1"): 
 		$Sprite.texture = textura1
@@ -143,11 +137,11 @@ func _on_Collision_Cuerpo_body_entered(body):
 func morir():
 	#SI MUERE REPROUCIMOS EL SONIDO Y LO LLEVAMOS AL INICIO DEL MAPA
 	if permitir_muerte > 1:
-		#get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
+		get_tree().get_nodes_in_group("SFX")[0].get_node("Muerte").play()
 		posicion_inicial()
 
 
 func _on_Moneda_agarrar_moneda():
 	get_node("Sprite").material.set_shader_param("activar", true)
-	
+	activar_shader = true
 	

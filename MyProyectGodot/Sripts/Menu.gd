@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	
-	#get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play() #REPRODUCIMOS LA MUSICA DEL MENU
+	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").play() #REPRODUCIMOS LA MUSICA DEL MENU
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #HACEMOS EL CURSOL VISIBLE
 	
 	#REVISAMOS SI HAY UNA PARTIDA GUARDADA. SI LA HAY MOSTRAMOS UN MENU CON EL BOTON QUE PERMITE SEGUIR ESA PARTIDA, SI NO ESE BOTON NO ESTA
@@ -17,8 +17,8 @@ func _ready():
 
 #CARGA UNA PARTIDA NUEVA
 func _on_Boton_Comenzar_pressed():
-	#get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
-	#get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
+	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	
 	GameData.puntos = 0
 	GameData.nivel = "res://Scenes/Nivel 1.tscn"
@@ -49,7 +49,7 @@ func _on_Boton_Menu_pressed():
 
 #CARGA LA PARTIDA GUARDADA
 func _on_Boton_Continuar_Partida_pressed():
-	#get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
-	#get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
+	get_tree().get_nodes_in_group("Music")[0].get_node("Menu").stop()
+	get_tree().get_nodes_in_group("SFX")[0].get_node("Botones").play()
 	get_tree().change_scene(GameData.nivel)
 	

@@ -12,43 +12,40 @@
 [sub_resource type="Shader" id=62]
 code = "shader_type canvas_item;
 
-const float PI = 3.141516;
+uniform float velocidad = 1.0;
+uniform float duracion : hint_range(0.1, 1.0) = 0.3;
+uniform vec4 color : hint_color = vec4(1.0, 1.0, 0.0, 1.0);
 
-uniform float speed = 1.0;
-
-uniform vec4 tint : hint_color = vec4(1.0, 1.0, 0.0, 1.0);
-
-uniform float span : hint_range(0.1, 1.0) = 0.3;
 uniform bool activar = false;
 
 float luminance(vec4 colour) {
-	return 1.0 - sqrt(0.299*colour.r*colour.r + 0.587*colour.g*colour.g + 0.114*colour.b*colour.b);
+	return 1.0 - sqrt(0.299*colour.r*colour.r + 0.587*colour.g*colour.g + 0.114*colour.b*colour.b); //RAIZ CUADRADA DEL VEC4
 }
 
 void fragment() {
 	vec4 color_original = texture(TEXTURE, UV);//GUARDA LA TEXTURA ORIGINAL
 	vec4 color_final = color_original;
-	float target = abs(sin(TIME * PI * speed) * (1.0 + span));
+	
+	float objetivo = abs(sin(TIME * velocidad) * (1.0 + duracion)); //CALCULAMOS EL TIEMPO DEL EFECTO
+	
+	// DESDE EL JUGADOR; ACTIVAMOS O DESACTIVAMOS EL EFECTO CUANDO AGARRA UNA MONEDA
 	if(activar) {
-		if(color_final.a > 0.0 ) {
-			float lum = luminance(color_final);
-			float diff = abs(lum - target);
-			float mx = clamp(1. - diff / span, 0.0, 1.0);
-			color_final = mix(color_final, tint, mx);
-		}
+		float lum = luminance(color_final); //CALCULAMOS LA LUMINICENCIA
+		float diferencia = abs(lum - objetivo); //CAMCULAMOS EL VALOR ABSOLUTO DE LA DIFERENCIA ENTRE LA LUMINOCIDAD Y EL OBJETIVO
+		float mx = clamp(1.0 - diferencia / duracion, 0.0, 1.0); //Clamp ENTRE EL MIN Y MAX
+		color_final = mix(color_final, color, mx);
 	} else {
 		color_final = color_original;
 	}
-	
 	COLOR = color_final;
 }
 "
 
 [sub_resource type="ShaderMaterial" id=63]
 shader = SubResource( 62 )
-shader_param/speed = 1.0
-shader_param/tint = Color( 1, 1, 0, 1 )
-shader_param/span = 0.3
+shader_param/velocidad = 1.0
+shader_param/duracion = 0.3
+shader_param/color = Color( 1, 1, 0, 1 )
 shader_param/activar = false
 
 [sub_resource type="RectangleShape2D" id=17]
